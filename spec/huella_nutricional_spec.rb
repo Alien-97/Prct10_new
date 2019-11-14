@@ -20,6 +20,10 @@ RSpec.describe HuellaNutricional do
 		it"Se ha de poder instanciar los metros cuadrados de terreno"do
 			expect(@carne_vaca.respond_to?("area_terreno")).to eq(true)
 		end
+
+		it"Se han de poder instanciar las proteinas"do
+			expect(@carne_vaca.respond_to?("proteinas")).to eq(true)
+		end
 	end
   end
 

@@ -6,6 +6,10 @@
 /pkg/
 /spec/reports/
 /tmp/
-
+*~
+*swp*
+*.class
+*.log
+*.aux
 # rspec failure tracking
 .rspec_status

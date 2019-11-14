@@ -5,12 +5,12 @@ RSpec.describe HuellaNutricional do
 
   describe Alimento do
   	before :all do
-  		@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre")
+  		@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
 	end
 
 	context "Probando los attr_accessors" do
 		it "Se ha de poder instanciar un alimento"do
-			expect(@carne_vaca.instance_variable_defined?(:@nombre)).to eq(true)
+			expect(@carne_vaca.instance_variable_defined?(:@nombre_alimento)).to eq(true)
 		end
 
 		it "Se ha de poder instanciar los gases de efecto invernadero"do
@@ -43,7 +43,7 @@ RSpec.describe HuellaNutricional do
 
 		it"Se ha de poder obtener el nombre del alimento"do
 
-			expect(@carne_vaca.respond_to?("nombre")).to eq(true)
+			expect(@carne_vaca.respond_to?("nombre_alimento")).to eq(true)
 		end
 
 		it"Se ha de poder obtener los gases de efecto invernadero del alimento"do
@@ -66,6 +66,13 @@ RSpec.describe HuellaNutricional do
 			expect(@carne_vaca.valor_energetico_alimento).to eq(202.3)
 		end
 	end
+
+	context "Probando el metodo consumo adecuado proteinas"do
+		it"Debe existir el metodo para ver si su alimento se ajusta a las recomendaciones diarias de proteinas"do
+			expect(@carne_vaca.respond_to?("consumo_adecuado_proteinas")).to eq(true)
+		end
+	end
+
   end
 
 end

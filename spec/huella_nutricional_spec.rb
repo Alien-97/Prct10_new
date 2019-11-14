@@ -32,6 +32,10 @@ RSpec.describe HuellaNutricional do
 		it"Se ha de poder instanciar lipidos"do
 			expect(@carne_vaca.respond_to?("lipidos")).to eq(true)
 		end
+
+		it"Se ha de poder instanciar el genero de la persona"do
+			expect(@carne_vaca.respond_to?("sexo")).to eq(true)
+		end
 	end
   end
 

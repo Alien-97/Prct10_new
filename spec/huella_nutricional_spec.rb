@@ -16,6 +16,10 @@ RSpec.describe HuellaNutricional do
 		it "Se ha de poder instanciar los gases de efecto invernadero"do
 			expect(@carne_vaca.respond_to?("kg_gei")).to eq(true)
 		end
+
+		it"Se ha de poder instanciar los metros cuadrados de terreno"do
+			expect(@carne_vaca.respond_to?("area_terreno")).to eq(true)
+		end
 	end
   end
 

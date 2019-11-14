@@ -24,6 +24,10 @@ RSpec.describe HuellaNutricional do
 		it"Se han de poder instanciar las proteinas"do
 			expect(@carne_vaca.respond_to?("proteinas")).to eq(true)
 		end
+
+		it"Se ha de poder instanciar carbohidratos"do
+			expect(@carne_vaca.respond_to?("carbohidratos")).to eq(true)
+		end
 	end
   end
 

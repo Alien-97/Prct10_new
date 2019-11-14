@@ -39,7 +39,7 @@ RSpec.describe HuellaNutricional do
 
 	end
 
-	context "Probando el metodo devolver nombre atributo"do
+	context "Probando el metodo devolver  atributos"do
 
 		it"Se ha de poder obtener el nombre del alimento"do
 
@@ -53,6 +53,13 @@ RSpec.describe HuellaNutricional do
 
 		it"Se ha de poder obtener la cantidad de terreno usada"do
 			expect(@carne_vaca.respond_to?("area_terreno")).to eq(true)
+		end
+	end
+
+	context "Probando el metodo devolver valor energetico"do
+		
+		it"Se ha de poder obtener el valor energetico"do
+			expect(@carne_vaca.respond_to?("valor_energetico_alimento")).to eq(true)
 		end
 	end
   end

@@ -1,8 +1,8 @@
 class Alimento
 
-	attr_accessor :nombre,:kg_gei,:area_terreno,:proteinas,:carbohidratos,:lipidos
+	attr_accessor :nombre,:kg_gei,:area_terreno,:proteinas,:carbohidratos,:lipidos,:sexo
 
 	def initialize(nombre,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo)
-		@nombre,@kg_gei,@area_terreno,@proteinas,@lipidos= nombre,kg_gei,area_terreno,proteinas,carbohidratos,lipidos			
+		@nombre,@kg_gei,@area_terreno,@proteinas,@lipidos,@sexo= nombre,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo			
 	end
 end

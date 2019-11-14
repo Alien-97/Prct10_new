@@ -1,6 +1,3 @@
-
-
-
 RSpec.describe HuellaNutricional do
   it "has a version number" do
     expect(HuellaNutricional::VERSION).not_to be nil
@@ -14,7 +11,10 @@ RSpec.describe HuellaNutricional do
 	context "Probando los getters y el to_s" do
 		it "Se ha de poder instanciar un alimento"do
 			expect(@carne_vaca.nombre).to eq("carne de vaca")
-			expect(@carne_vaca.kg_gei).to eq(50.0)
+		end
+
+		it "Se ha de poder instanciar los gases de efecto invernadero"do
+			expect(@carne_vaca.respond_to?("kg_gei")).to eq(true)
 		end
 	end
   end

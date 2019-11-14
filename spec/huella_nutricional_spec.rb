@@ -58,8 +58,12 @@ RSpec.describe HuellaNutricional do
 
 	context "Probando el metodo devolver valor energetico"do
 		
-		it"Se ha de poder obtener el valor energetico"do
+		it"Debe existir el metodo para obtener el valor energetico"do
 			expect(@carne_vaca.respond_to?("valor_energetico_alimento")).to eq(true)
+		end
+
+		it"Se ha de poder obtener el valor energetico"do
+			expect(@carne_vaca.valor_energetico_alimento).to eq(202.3)
 		end
 	end
   end

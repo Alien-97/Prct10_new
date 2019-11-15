@@ -44,6 +44,38 @@ class Alimento
 	end
 
 	def impacto_ambiental(alimentos)
+		acc = 0
+		acc_kcal = 0
+		acc_gei = 0
+		acc_proteinas = 0
+		prev_item = " "
+		if alimentos.length >= 2
+			alimentos.each do |alimento,indice|
+				puts indice
+				if indice.to_i >= 1
+					if (alimento.sexo <=> prev_item)!=0
+						raise ArgumentError, "El menu lo debe consumir la misma persona, debe especificar el mismo genero en cada alimento"
+					end
+				end
+				if alimento.instance_of?Alimento
+					acc_kcal += alimento.valor_energetico_alimento
+					acc_gei += alimento.kg_gei
+					acc_proteinas += alimento.proteinas
+					prev_item = alimento.sexo
+				else
+					raise ArgumentError, "Error: uno o mas  argumentos no son de tipo alimento "
+				end
+			end
+		elsif alimentos.length < 2
+			raise ArgumentError, "Numero de argumentos incorrecto, debe introducir 2 o más alimentos "
+		end
+
+		if (acc_proteinas < 54.0 || acc_kcal < 3000 ) && sexo === "hombre"
+			raise RuntimeError, "No se puede calcular el GEI, cantidad de proteinas y/o calorias por debajo de la recomendada"
+		elsif sexo === "mujer" && (acc_proteinas < 41 || acc_kcal < 2300)
+			raise RuntimeError, "No se puede calcular el GEI, cantidad de proteinas y/o calorias por debajo de la recomendada"
+		end
+		return acc_gei
 	
 	end
 

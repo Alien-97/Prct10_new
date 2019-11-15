@@ -28,4 +28,20 @@ class Alimento
 		usted_consume_bien
 
 	end
+
+	def to_s
+		salida = "#{ "100 g de " + @nombre_alimento + " los kg de gases de efecto invernadero que genera son: " + @kg_gei.to_s + " y la cantidad de terreno en metros cuadrados usado en producirlo son: " + @area_terreno.to_s + " Comer un kilo de " + @nombre_alimento + " te da " + @proteinas.to_s + " gramos de proteinas " + " y " + @carbohidratos.to_s + " gramos de carbohidratos " + " y " + @lipidos.to_s + " gramos de lipidos " + " Su valor energetico es: " + valor_energetico_alimento.to_s} "
+	end
+
+	def imprime_mensaje_recomendacion
+		consumo_adecuado_proteinas.to_s
+		gramos_a_consumir = " gramos de " + @nombre_alimento + " para llegar al minimo recomendado "
+		if consumo_adecuado_proteinas.is_a?(String) == false
+			consumo_adecuado_proteinas.to_s + " gramos de " + @nombre_alimento + " para llegar al minimo recomendado de proteinas "
+		elsif consumo_adecuado_proteinas.is_a?(String) == true
+			consumo_adecuado_proteinas
+		end
+	end
+
+
 end

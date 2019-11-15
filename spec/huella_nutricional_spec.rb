@@ -83,6 +83,13 @@ RSpec.describe HuellaNutricional do
 		end
 	end
 
+	context "Probando el metodo del impacto ambiental"do
+
+		it"Debe existir un metodo que calcula el impacto ambiental"do
+			expect(@carne_vaca.respond_to?("impacto_ambiental")).to eq(true)
+		end
+	end
+
   end
 
 end

@@ -77,6 +77,14 @@ RSpec.describe HuellaNutricional do
 		end
 	end
 
+	context "Probando el metodo to_s"do
+		it"Se debe poder obtener la salida formateada de las variables de instancia y toda la información almacenada del alimento"do
+			expect(@carna_vaca.respond_to?to_s).to eq("carne de vaca
+100 g de carne de vaca los kg de gases de efecto invernadero que genera son: 50.0 y la cantidad de terreno en metros cuadrados usado en producirlo son: 164.0 Comer un kilo de carne de vaca te da 21.1 gramos de proteinas  y 0.0 gramos de carbohidratos  y 3.1 gramos de lipidos  Su valor energetico es: 202.3 Para llegar a la cantidad recomendada de proteinas usted debe consumir: 255.9241706161137 gramos de carne de vaca para llegar al minimo recomendado de proteinas  
+202.3")
+		end
+	end
+
   end
 
 end

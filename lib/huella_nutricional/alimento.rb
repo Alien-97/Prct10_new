@@ -3,14 +3,18 @@ class Alimento
 	attr_accessor :nombre_alimento,:kg_gei,:area_terreno,:proteinas,:carbohidratos,:lipidos,:sexo,:cantidad_elemento
 
 	def initialize(nombre_alimento,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo,cantidad_elemento)
+
 		@nombre_alimento,@kg_gei,@area_terreno,@proteinas,@carbohidratos,@lipidos,@sexo,@cantidad_elemento= nombre_alimento,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo,cantidad_elemento			
 	end
+
 
 	def valor_energetico_alimento
 		@val_energetico_alimento = (((4 * @carbohidratos + 9 * @proteinas + 4 * @lipidos) * 100).round) / 100.0
 	end
 
+
 	def consumo_adecuado_proteinas
+
 		cantidad_recomendada_proteinas_hombre = 54.0
 		cantidad_recomendada_proteinas_mujer = 41.0
 		cantidad_alimento_a_consumir = 0.0
@@ -51,9 +55,10 @@ class Alimento
 		prev_item = " "
 		if alimentos.length >= 2
 			alimentos.each do |alimento,indice|
-				puts indice
+				puts "El indice que estoy analizando ahora (1) #{indice}"
 				if indice.to_i >= 1
 					if (alimento.sexo <=> prev_item)!=0
+						puts "El indice que estoy analizando ahora (2) " + indice.to_i
 						raise ArgumentError, "El menu lo debe consumir la misma persona, debe especificar el mismo genero en cada alimento"
 					end
 				end
@@ -81,3 +86,13 @@ class Alimento
 
 
 end
+
+	@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
+	@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"mujer",100)
+	@cafe = Alimento.new("cafe",0.4,0.3,0.1,0.0,0.0,"hombre",100)
+	@biste = Alimento.new("biste",180.0,400.0,54.5,48.9,68.5,"hombre",100)
+	@caviar = Alimento.new("caviar",400.0,850.0,199.5,101.4,96.8,"hombre",100)
+
+	@menu_hombre = [@carne_vaca,@huevos]
+
+	puts @carne_vaca.impacto_ambiental(@menu_hombre)

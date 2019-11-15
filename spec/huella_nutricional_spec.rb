@@ -73,7 +73,7 @@ RSpec.describe HuellaNutricional do
 		end
 
 		it"Se ha de poder obtener el consumo adecuado del alimento para consumir el minimo recomendado de proteinas segun su genero"do
-			expect(@carne_vaca.consumo_adecuado_proteinas).to eq("No se preocupe, con 100 g carne de vaca usted consume lo suficiente de proteinas")
+			expect(@carne_vaca.consumo_adecuado_proteinas).to eq(255.9241706161137)
 		end
 	end
 

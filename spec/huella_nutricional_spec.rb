@@ -107,7 +107,7 @@ RSpec.describe HuellaNutricional do
 		end
 
 		it" Se ha de poder obtener el impacto ambiental para una mujer"do
-			expect(@carne_vaca.impacto_ambiental(@menu_mujer)).to eq(3600)
+			expect(@carne_vaca.impacto_ambiental(@menu_mujer)).to eq(261.3)
 		end
 	end
 

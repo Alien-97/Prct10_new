@@ -71,6 +71,10 @@ RSpec.describe HuellaNutricional do
 		it"Debe existir el metodo para ver si su alimento se ajusta a las recomendaciones diarias de proteinas"do
 			expect(@carne_vaca.respond_to?("consumo_adecuado_proteinas")).to eq(true)
 		end
+
+		it"Se ha de poder obtener el consumo adecuado del alimento para consumir el minimo recomendado de proteinas segun su genero"do
+			expect(@carne_vaca.consumo_adecuado_proteinas).to eq("No se preocupe, con 100 g carne de vaca usted consume lo suficiente de proteinas")
+		end
 	end
 
   end

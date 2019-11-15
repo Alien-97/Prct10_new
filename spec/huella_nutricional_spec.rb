@@ -6,7 +6,13 @@ RSpec.describe HuellaNutricional do
   describe Alimento do
   	before :all do
   		@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
+		@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+		@cafe = Alimento.new("cafe",0.4,0.3,0.1,0.0,0.0,"hombre",100)
+		@biste = Alimento.new("biste",180.0,400.0,54.5,48.9,68.5,"hombre",100)
+		@caviar = Alimento.new("caviar",400.0,850.0,199.5,101.4,96.8,"hombre",100)
+		@menu = [@carne_vaca,@huevos,@cafe,@biste,@caviar]
 	end
+
 
 	context "Probando los attr_accessors" do
 		it "Se ha de poder instanciar un alimento"do
@@ -87,6 +93,10 @@ RSpec.describe HuellaNutricional do
 
 		it"Debe existir un metodo que calcula el impacto ambiental"do
 			expect(@carne_vaca.respond_to?("impacto_ambiental")).to eq(true)
+		end
+
+		it" Se ha de obtener el impacto ambiental para un hombre"do
+			expect(@carne_vaca.impacto_ambiental(@menu)).to eq(634.6)
 		end
 	end
 

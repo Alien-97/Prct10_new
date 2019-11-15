@@ -43,8 +43,8 @@ class Alimento
 		end
 	end
 
-	def impacto_ambiental
-
+	def impacto_ambiental(alimentos)
+	
 	end
 
 

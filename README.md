@@ -1,6 +1,6 @@
 # HuellaNutricional
 
-Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Programación.
+### Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Programación.
 
 * Alumno : Alien Embarec Riadi
 
@@ -14,7 +14,7 @@ Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Pro
 
 
 
-##Práctica:6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE.Archivo
+## Práctica:6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE.Archivo
 
 En esta práctica se ha creado la clase Alimento, donde se guarda informacion nutricial inherente a este, y además, su impacto ambiental, en terminos de kg de gases de efecto invernadero generados, area en metros cuadrados de terreno usada para producirlo/cultivarlo, todos estos datos se toman para una porcion de 100 gramos de cada alimento. El objetivo principal es calcular el valor energetico y el impacto ambiental, haciendo uso del TDD. Y para poner en práctica conceptos dados en clase sobre variables de instancia, clases, metodos de instancia,to_s,entre otros.
 

@@ -4,7 +4,11 @@
 
 # HuellaNutricional
 
+<<<<<<< HEAD
 Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Programación.
+=======
+### Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Programación.
+>>>>>>> desarrollo
 
 * Alumno : Alien Embarec Riadi
 
@@ -18,11 +22,23 @@ Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Pro
 
 
 
+<<<<<<< HEAD
 ##Práctica:6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE.Archivo
 
 En esta práctica se ha creado la clase Alimento, donde se guarda informacion nutricial inherente a este, y además, su impacto ambiental, en terminos de kg de gases de efecto invernadero generados, area en metros cuadrados de terreno usada para producirlo/cultivarlo, todos estos datos se toman para una porcion de 100 gramos de cada alimento. El objetivo principal es calcular el valor energetico y el impacto ambiental, haciendo uso del TDD. Y para poner en práctica conceptos dados en clase sobre variables de instancia, clases, metodos de instancia,to_s,entre otros.
 
 *Fecha entrega: 15-11-2019 
+=======
+## Práctica:6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE.Archivo
+
+En esta práctica se ha creado la clase Alimento, donde se guarda informacion nutricial inherente a este, y además, su impacto ambiental, en terminos de kg de gases de efecto invernadero generados, area en metros cuadrados de terreno usada para producirlo/cultivarlo, todos estos datos se toman para una porcion de 100 gramos de cada alimento. El objetivo principal es calcular el valor energetico y el impacto ambiental, haciendo uso del TDD. Y para poner en práctica conceptos dados en clase sobre variables de instancia, clases, metodos de instancia,to_s,entre otros.
+
+*Fecha entrega: 15-11-2019
+
+
+
+# HuellaNutricional
+>>>>>>> desarrollo
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/huella_nutricional`. To experiment with that code, run `bin/console` for an interactive prompt.
 

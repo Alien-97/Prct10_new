@@ -143,9 +143,11 @@ RSpec.describe HuellaNutricional do
 
 	  	context " Probando las variables de instancia que deben existir "do
 		  	it " Se ha de poder instanciar la cabeza de la lista "do
-				
-
 				expect(@lista_dieta_española.instance_variable_defined?(:@head)).to eq true
+		  	end
+
+		  	it " Se ha de poder instanciar la cola de la lista "do
+		  		expect(@lista_dieta_española.instance_variable_defined?(:@tail)).to eq true
 		  	end
 		end
   	end

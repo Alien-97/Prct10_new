@@ -18,6 +18,10 @@ RSpec.describe HuellaNutricional do
 		@mousse_chocolate = Alimento.new("mouse chocolate",99.4,95.6,86.7,92.3,103.8,"mujer",100)
 
 		@menu_mujer = [@pasta_con_atun,@arroz_a_la_cubana,@mousse_chocolate]
+
+		@lista_dieta_española = Lista.new
+
+		
 	end
 
 
@@ -112,5 +116,38 @@ RSpec.describe HuellaNutricional do
 	end
 
   end
+
+  	describe Lista do
+
+		before :all do
+			
+                	@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
+                	@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+                	@cafe = Alimento.new("cafe",0.4,0.3,0.1,0.0,0.0,"hombre",100)
+                	@biste = Alimento.new("biste",180.0,400.0,54.5,48.9,68.5,"hombre",100)
+                	@caviar = Alimento.new("caviar",400.0,850.0,199.5,101.4,96.8,"hombre",100)
+
+                	@menu_hombre = [@carne_vaca,@huevos,@cafe,@biste,@caviar]
+
+                	@pasta_con_atun = Alimento.new("pasta con atun",79.0,280.0,58.9,76.4,80.6,"mujer",100)
+                	@arroz_a_la_cubana = Alimento.new("arroz a la cubana",82.9,400.6,94.7,83.9,86.4,"mujer",100)
+                	@mousse_chocolate = Alimento.new("mouse chocolate",99.4,95.6,86.7,92.3,103.8,"mujer",100)
+
+                	@menu_mujer = [@pasta_con_atun,@arroz_a_la_cubana,@mousse_chocolate]
+
+                	@lista_dieta_española = Lista.new
+
+
+       
+		end
+
+	  	context " Probando las variables de instancia que deben existir "do
+		  	it " Se ha de poder instanciar la cabeza de la lista "do
+				
+
+				expect(@lista_dieta_española.respond_to?(:@head)).to eq true
+		  	end
+		end
+  	end
 
 end

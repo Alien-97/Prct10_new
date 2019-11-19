@@ -86,6 +86,7 @@ class Alimento
 
 
 end
+<<<<<<< HEAD
 
 	@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
 	@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"mujer",100)
@@ -96,3 +97,8 @@ end
 	@menu_hombre = [@carne_vaca,@huevos]
 
 	puts @carne_vaca.impacto_ambiental(@menu_hombre)
+||||||| merged common ancestors
+=======
+
+# Hey
+>>>>>>> desarrollo

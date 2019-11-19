@@ -145,7 +145,7 @@ RSpec.describe HuellaNutricional do
 		  	it " Se ha de poder instanciar la cabeza de la lista "do
 				
 
-				expect(@lista_dieta_española.respond_to?(:@head)).to eq true
+				expect(@lista_dieta_española.instance_variable_defined?(:@head)).to eq true
 		  	end
 		end
   	end

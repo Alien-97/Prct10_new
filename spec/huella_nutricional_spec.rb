@@ -154,6 +154,12 @@ RSpec.describe HuellaNutricional do
 		  		expect(@lista_dieta_española.instance_variable_defined?(:@sz)). to eq true
 		  	end
 		end
+
+		context " Probando los metodos de instancia "do
+			it " Debe existir el getter de la cabeza" do
+				expect(@lista_dieta_española.respond_to?("head")). to eq true
+			end
+		end
   	end
 
 end

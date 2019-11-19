@@ -41,7 +41,7 @@ guard :rspec, cmd: "bundle exec rspec" do
   dsl = Guard::RSpec::Dsl.new(self)
 
   # Feel free to open issues for suggestions and improvements
-
+  watch(%r{^lib/huella_nutricional/(.+)\.rb$}) {dsl.rspec.spec_dir}
   # RSpec files
   rspec = dsl.rspec
   watch(rspec.spec_helper) { rspec.spec_dir }
@@ -84,4 +84,5 @@ guard :rspec, cmd: "bundle exec rspec" do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
     Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
   end
+
 end

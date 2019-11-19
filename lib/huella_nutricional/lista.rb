@@ -6,5 +6,6 @@ class Lista
 		@tail = nil
 		@sz = 0
 	end
+	#yyyyyyyyy
 
 end

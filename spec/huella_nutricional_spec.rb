@@ -164,6 +164,10 @@ RSpec.describe HuellaNutricional do
 				expect(@lista_dieta_española.respond_to?("tail")). to eq true
 			end
 
+			it " Debe existir el getter del size" do
+				expect(@lista_dieta_española.respond_to?("sz")). to eq true
+			end
+
 		end
   	end
 

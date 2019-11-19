@@ -159,6 +159,11 @@ RSpec.describe HuellaNutricional do
 			it " Debe existir el getter de la cabeza" do
 				expect(@lista_dieta_española.respond_to?("head")). to eq true
 			end
+
+			it " Debe existir el getter de la cola" do
+				expect(@lista_dieta_española.respond_to?("tail")). to eq true
+			end
+
 		end
   	end
 

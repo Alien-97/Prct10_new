@@ -136,8 +136,6 @@ RSpec.describe HuellaNutricional do
                 	@menu_mujer = [@pasta_con_atun,@arroz_a_la_cubana,@mousse_chocolate]
 
                 	@lista_dieta_española = Lista.new
-
-
        
 		end
 
@@ -168,6 +166,12 @@ RSpec.describe HuellaNutricional do
 				expect(@lista_dieta_española.respond_to?("sz")). to eq true
 			end
 
+		end
+
+		context " Probando el Struct para Crear un Nodo y conocer value/next/prev"do
+			it "Se ha de poder obtener el valor del nodo"do
+				nodo = Lista.Nodo.new(@carne_vaca)
+			end
 		end
   	end
 

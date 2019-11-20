@@ -129,16 +129,19 @@ RSpec.describe HuellaNutricional do
 
                 	@menu_hombre = [@carne_vaca,@huevos,@cafe,@biste,@caviar]
 
-                	@pasta_con_atun = Alimento.new("pasta con atun",79.0,280.0,58.9,76.4,80.6,"mujer",100)
-                	@arroz_a_la_cubana = Alimento.new("arroz a la cubana",82.9,400.6,94.7,83.9,86.4,"mujer",100)
-                	@mousse_chocolate = Alimento.new("mouse chocolate",99.4,95.6,86.7,92.3,103.8,"mujer",100)
+                	@pasta_con_atun = Alimento.new("pasta con atun",79.0,280.0,58.9,76.4,80.6,"hombre",100)
+                	@arroz_a_la_cubana = Alimento.new("arroz a la cubana",82.9,400.6,94.7,83.9,86.4,"hombre",100)
+                	@mousse_chocolate = Alimento.new("mouse chocolate",99.4,95.6,86.7,92.3,103.8,"hombre",100)
 
                 	@menu_mujer = [@pasta_con_atun,@arroz_a_la_cubana,@mousse_chocolate]
 
                 	@lista_dieta_española = Lista.new
 
-			@nodo = Nodo.new(2,nil,nil)
-       
+					@nodo = Nodo.new(@carne_vaca,nil,nil)
+					@nodo2 = Nodo.new(@arroz_a_la_cubana,nil,nil)
+       				@nodo3 = Nodo.new(@mousse_chocolate,nil,nil)
+       				@nodo4 = Nodo.new(@cafe,nil,nil)
+       				@nodo5 = Nodo.new(@caviar,nil,nil)
 		end
 
 	  	context " Probando las variables de instancia que deben existir "do
@@ -176,8 +179,35 @@ RSpec.describe HuellaNutricional do
 				@lista_dieta_española.push_head(@nodo)
 				expect(@lista_dieta_española.head). to eq @nodo
 			end
-			
-			
+		end
+
+		context "Comprobando la dieta"do
+			it"Comprobando que la dieta se ajusta a los parámetros pedidos"do
+				@lista_dieta_española.push_head(@nodo2)
+				@lista_dieta_española.push_head(@nodo3)
+				@lista_dieta_española.push_head(@nodo4)
+				@lista_dieta_española.push_head(@nodo5)
+				acc = 0
+				iterator = @lista_dieta_española.head
+				while iterator!=nil
+					if iterator!= @lista_dieta_española.head
+						expect(iterator.value.sexo).to eq iterator.prev.value.sexo
+					end
+
+					aux = iterator.value
+					expect(aux.class).to eq Alimento
+					expect(aux.carbohidratos.class).to eq Float
+					expect(aux.lipidos.class).to eq Float
+					expect(aux.proteinas.class).to eq Float
+					acc += aux.valor_energetico_alimento
+
+					iterator = iterator.next
+
+				end
+
+				
+					expect(acc).to be >= 3000  
+			end
 		end
   	end
 

@@ -172,7 +172,7 @@ RSpec.describe HuellaNutricional do
 
 		context " Probando metodos en la lista "do
 			it "Probando metodo insercion por la cabeza"do
-				expect((@lista_dieta_española.push_back).to receive(@nodo)).to eq true
+				expect(@lista_dieta_española.respond_to?("push_head")).to eq true
 			end
 		end
   	end

@@ -10,6 +10,7 @@ class Alimento
 
 	def valor_energetico_alimento
 		@val_energetico_alimento = (((4 * @carbohidratos + 9 * @proteinas + 4 * @lipidos) * 100).round) / 100.0
+		@val_energetico_alimento
 	end
 
 

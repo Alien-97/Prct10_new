@@ -13,6 +13,15 @@ class Alimento
 		@val_energetico_alimento
 	end
 
+	def *(escalar)
+
+		if escalar.is_a? Numeric
+			Alimento.new(@nombre_alimento,@kg_gei* escalar,@area_terreno*escalar,@proteinas*escalar,@carbohidratos*escalar,@lipidos * escalar,@sexo,@cantidad_elemento *escalar)
+		else
+			raise ArgumentError, " Argumento pasado para multiplicar el objeto " + "#{@nombre_alimento} " + " no es un numero"
+		end
+
+	end
 
 	def consumo_adecuado_proteinas
 
@@ -58,7 +67,7 @@ class Alimento
 			alimentos.each do |alimento,indice|
 				puts "El indice que estoy analizando ahora (1) #{indice}"
 				if indice.to_i >= 1
-					if (alimento.sexo <=> prev_item)!=0
+					if (alimento.sexo != prev_item)
 						puts "El indice que estoy analizando ahora (2) " + indice.to_i
 						raise ArgumentError, "El menu lo debe consumir la misma persona, debe especificar el mismo genero en cada alimento"
 					end

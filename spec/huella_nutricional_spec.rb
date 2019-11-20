@@ -137,11 +137,12 @@ RSpec.describe HuellaNutricional do
 
                 	@lista_dieta_española = Lista.new
 
-					@nodo = Nodo.new(@carne_vaca,nil,nil)
-					@nodo2 = Nodo.new(@arroz_a_la_cubana,nil,nil)
-       				@nodo3 = Nodo.new(@mousse_chocolate,nil,nil)
-       				@nodo4 = Nodo.new(@cafe,nil,nil)
-       				@nodo5 = Nodo.new(@caviar,nil,nil)
+					@nodo = Nodo.new(@carne_vaca * 4,nil,nil)
+
+					@nodo2 = Nodo.new(@arroz_a_la_cubana*4,nil,nil)
+       				@nodo3 = Nodo.new(@mousse_chocolate*4,nil,nil)
+       				@nodo4 = Nodo.new(@cafe*3,nil,nil)
+       				@nodo5 = Nodo.new(@caviar*1,nil,nil)
 		end
 
 	  	context " Probando las variables de instancia que deben existir "do
@@ -187,7 +188,10 @@ RSpec.describe HuellaNutricional do
 				@lista_dieta_española.push_head(@nodo3)
 				@lista_dieta_española.push_head(@nodo4)
 				@lista_dieta_española.push_head(@nodo5)
-				acc = 0
+				acc_vea = 0
+				acc_c = 0
+				acc_p = 0
+				acc_l = 0
 				iterator = @lista_dieta_española.head
 				while iterator!=nil
 					if iterator!= @lista_dieta_española.head
@@ -199,14 +203,17 @@ RSpec.describe HuellaNutricional do
 					expect(aux.carbohidratos.class).to eq Float
 					expect(aux.lipidos.class).to eq Float
 					expect(aux.proteinas.class).to eq Float
-					acc += aux.valor_energetico_alimento
-
+					acc_vea += aux.valor_energetico_alimento
+					acc_c += aux.carbohidratos * 4
+					acc_p += aux.proteinas * 4
+					acc_l += aux.lipidos * 9
 					iterator = iterator.next
 
 				end
 
-				
-					expect(acc).to be >= 3000  
+					expect(acc_vea).to be >= 3000 
+					expect(acc_c.to_i).to be ===((0.36*acc_vea).to_i..(0.401*acc_vea).to_i)
+					expect(acc_p.to_i).to be === ((0.16*acc_vea).to_i..(0.201*acc_vea).to_i)
 			end
 		end
   	end

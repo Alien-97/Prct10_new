@@ -92,4 +92,7 @@ class Lista
 
       return val
     end
+
+    def pop_tail
+    end
 end

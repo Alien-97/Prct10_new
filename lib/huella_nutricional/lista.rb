@@ -31,6 +31,20 @@ class Lista
     end
 
     def push_tail(value)
-     
+     if value.class == Nodo
+        added_node = value
+      else
+        added_node = Node.new(value)
+      end
+
+      added_node.next = nil
+      added_node.prev = @tail
+
+      @tail.next = added_node unless @tail.nil?
+      @tail = added_node
+      @head = added_node if @head.nil? 
+      @sz = @sz + 1
+
+      return nil
     end
 end

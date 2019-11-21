@@ -139,6 +139,8 @@ RSpec.describe HuellaNutricional do
 
 			@nodo = Nodo.new(@chocolate * 10,nil,nil)
 
+			@nodo7 = Nodo.new(@chocolate * 10,nil,nil)
+			@nodo8 = Nodo.new(@huevos * 10,nil,nil)
 			@nodo2 = Nodo.new(@huevos * 4,nil,nil)
 			@nodo3 = Nodo.new(@leche_vaca * 3,nil,nil)
 			
@@ -187,13 +189,13 @@ RSpec.describe HuellaNutricional do
 
 			it"Probando metodo insercion por la cola"do
 				expect(@lista_pruebas.respond_to?("push_tail")).to eq true
-				@lista_pruebas.push_tail(@nodo)
-				expect(@lista_pruebas.tail).to eq @nodo
+				@lista_pruebas.push_tail(@nodo7)
+				expect(@lista_pruebas.tail).to eq @nodo7
 			end
 
 			it"Probando metodo insercion en cualquier posicion"do
 				expect(@lista_dieta_guay.respond_to?("insert")).to eq true
-				@lista_pruebas.insert(2,@nodo)
+				@lista_pruebas.insert(@nodo8,1)
 				expect(@lista_pruebas.sz).to eq 2
 			end
 		end
@@ -219,6 +221,7 @@ RSpec.describe HuellaNutricional do
 						puts " Sexo del nodo previo " + "#{iterator.prev.value.sexo}"
 						expect(iterator.value.sexo).to eq iterator.prev.value.sexo
 						puts " Sexo de la persona  " + "#{iterator.value.sexo}"
+						puts " Alimento " + "#{iterator.value.nombre_alimento}"
 						puts " el iterador " + "#{i}"
 					end
 

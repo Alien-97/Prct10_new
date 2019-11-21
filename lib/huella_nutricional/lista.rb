@@ -50,6 +50,27 @@ class Lista
     end
 
     def insert(value,posicion)
-
+    	if posicion.is_a? Integer
+			if posicion == 0 
+				push_head(value)
+			elsif posicion == @sz
+				push_tail(value)
+			elsif posicion < @sz && posicion > 0
+				if value.class == Node
+					addedNode = value
+				else
+					addedNode = Node.new(value)
+				end
+				iterator = @head
+				posicion.times do |i|
+					iterator = iterator.next
+				end		
+				addedNode.prev = iterator.prev
+				addedNode.next = iterator
+				iterator.prev = addedNode
+				addedNode.prev.next = addedNode
+				@sz = @sz + 1
+			end
+		end
     end
 end

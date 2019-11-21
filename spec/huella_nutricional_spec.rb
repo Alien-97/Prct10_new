@@ -217,6 +217,8 @@ RSpec.describe HuellaNutricional do
 				@lista_pruebas.push_head(@nodo7)
 				@lista_pruebas.push_head(@nodo8)
 				expect(@lista_pruebas.respond_to?("delete")).to eq true
+				@lista_pruebas.delete(1)
+				expect(@lista_pruebas.sz).to eq 1
 			end
 		end
 

@@ -111,7 +111,8 @@ class Lista
         return val
     end
 
-      
+    def delete
+    end
     
 
 

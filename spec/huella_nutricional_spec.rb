@@ -194,7 +194,7 @@ RSpec.describe HuellaNutricional do
 			end
 
 			it"Probando metodo insercion en cualquier posicion"do
-				expect(@lista_dieta_guay.respond_to?("insert")).to eq true
+				expect(@lista_pruebas.respond_to?("insert")).to eq true
 				@lista_pruebas.insert(@nodo8,1)
 				expect(@lista_pruebas.sz).to eq 2
 			end
@@ -202,7 +202,7 @@ RSpec.describe HuellaNutricional do
 
 		context "Probando metodos borrado en la lista"do
 			it "Probando metodo borrado por la cabeza "do
-				expect(@lista_dieta_guay.respond_to?("pop_head")).to eq true
+				expect(@lista_pruebas.respond_to?("pop_head")).to eq true
 				@lista_pruebas.pop_head
 				expect(@lista_pruebas.sz).to eq 1
 			end

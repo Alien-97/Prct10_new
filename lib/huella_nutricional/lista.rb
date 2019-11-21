@@ -75,5 +75,21 @@ class Lista
     end
 
     def pop_head
+
+	  if(@head == nil)
+        return nil
+      else
+        val= @head
+        node = @head.next
+        @head = node
+        if @head != nil
+          @head.prev = nil
+        else
+        	@tail = nil
+        end
+        @sz = @sz -1
+      end
+
+      return val
     end
 end

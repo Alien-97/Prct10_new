@@ -194,6 +194,8 @@ RSpec.describe HuellaNutricional do
 				acc_c = 0
 				acc_p = 0
 				acc_l = 0
+				acc_gei = 0
+				acc_t = 0
 				i = 0
 				iterator = @lista_dieta_guay.head
 				while iterator!=nil
@@ -214,15 +216,19 @@ RSpec.describe HuellaNutricional do
 					acc_c += aux.carbohidratos * 4
 					acc_p += aux.proteinas * 4
 					acc_l += aux.lipidos * 9
+					acc_gei += aux.kg_gei
+					acc_t += aux.area_terreno
 					iterator = iterator.next
 					i = i +1
 				end
 
-				puts "Heyys "
+				puts acc_gei
+				puts acc_t
 				puts acc_vea
 				expect(acc_vea).to be >= 3000 
-				expect(acc_c.to_i).to be_between((0.10*acc_vea).to_i,(0.401*acc_vea).to_i).inclusive
-				#expect(acc_p.to_i).to be === ((0.16*acc_vea).to_i..(0.201*acc_vea).to_i)
+				expect(acc_c.to_i).to be_between((0.10*acc_vea).to_i,(0.401*acc_vea).to_i).inclusive 
+				expect(acc_p.to_i).to be_between((0.16*acc_vea).to_i,(0.201*acc_vea).to_i).inclusive 
+				expect(acc_gei). to eq (800)
 				
 				
 			end

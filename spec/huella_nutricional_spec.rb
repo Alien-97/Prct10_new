@@ -144,6 +144,9 @@ RSpec.describe HuellaNutricional do
 			
 			@nodo5 = Nodo.new(@pollo * 5,nil,nil)
 			@nodo6 = Nodo.new(@carne_vaca * 6,nil,nil)
+
+			@lista_pruebas = Lista.new
+
 		end
 
 	  	context " Probando las variables de instancia que deben existir "do
@@ -181,9 +184,14 @@ RSpec.describe HuellaNutricional do
 				@lista_dieta_guay.push_head(@nodo)
 				expect(@lista_dieta_guay.head). to eq @nodo
 			end
+
+			it"Probando metodo insercion por la cola"do
+				expect(@lista_pruebas.respond_to?("push_back")).to eq true
+			end
+
 		end
 
-		context "Comprobando la dieta"do
+		context "Comprobando la dieta guay"do
 			it"Comprobando que la dieta se ajusta a los parámetros pedidos"do
 				@lista_dieta_guay.push_head(@nodo2)
 				@lista_dieta_guay.push_head(@nodo3)
@@ -229,7 +237,7 @@ RSpec.describe HuellaNutricional do
 				expect(acc_c.to_i).to be_between((0.10*acc_vea).to_i,(0.401*acc_vea).to_i).inclusive 
 				expect(acc_p.to_i).to be_between((0.16*acc_vea).to_i,(0.201*acc_vea).to_i).inclusive 
 				expect(acc_gei.to_i). to eq (377)
-				
+				expect(acc_t.to_i).to eq (1103)
 				
 			end
 		end

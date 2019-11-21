@@ -182,11 +182,13 @@ RSpec.describe HuellaNutricional do
 			it "Probando metodo insercion por la cabeza"do
 				expect(@lista_dieta_guay.respond_to?("push_head")).to eq true
 				@lista_dieta_guay.push_head(@nodo)
-				expect(@lista_dieta_guay.head). to eq @nodo
+				expect(@lista_dieta_guay.head).to eq @nodo
 			end
 
-			it"Probando metodo insercion por la cola"do
+			it"Debe existir metodo insercion por la cola"do
 				expect(@lista_pruebas.respond_to?("push_tail")).to eq true
+				@lista_pruebas.push_tail(@nodo)
+				expect(@lista_pruebas.tail).to eq @nodo
 			end
 
 		end

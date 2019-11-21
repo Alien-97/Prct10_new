@@ -193,6 +193,8 @@ RSpec.describe HuellaNutricional do
 
 			it"Probando metodo insercion en cualquier posicion"do
 				expect(@lista_dieta_guay.respond_to?("insert")).to eq true
+				@lista_pruebas.insert(2,@nodo)
+				expect(@lista_pruebas.sz).to eq 2
 			end
 		end
 

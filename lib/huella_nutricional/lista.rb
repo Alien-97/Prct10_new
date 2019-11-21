@@ -30,6 +30,7 @@ class Lista
       
     end
 
+
     def push_tail(value)
      if value.class == Nodo
         added_node = value
@@ -48,6 +49,7 @@ class Lista
       return nil
     end
 
-    def insert(posicion,value)
+    def insert(value,posicion)
+
     end
 end

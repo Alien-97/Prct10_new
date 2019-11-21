@@ -4,11 +4,11 @@
 
 # HuellaNutricional
 
-<<<<<<< HEAD
-Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Programación.
-=======
+
+
+
 ### Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Programación.
->>>>>>> desarrollo
+
 
 * Alumno : Alien Embarec Riadi
 
@@ -21,15 +21,13 @@ Gema para realizar las prácticas de la asignatura Lenguajes y Paradigmas de Pro
 * Centro Docente : Escuela Superior de Ingeniería y Tecnología, **Universidad de La Laguna**, Tenerife, Islas Canarias, España
 
 
+## Práctica 7 POO.Listas. INDIVIDUAL. PUNTUABLE
 
-<<<<<<< HEAD
-##Práctica:6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE.Archivo
+En esta práctica se añadió a la gema la clase Lista, para crear objetos que almacenaran varios objetos Alimento, representando estos la alimentación de una dieta específica, con el consumo durante un día, el objetivo es seleccionar aquellas dietas que, tratándose de un hombre, cumplan con las recomendaciones de energía a consumir diariamente, debe contener un porcentaje de nutrientes, ya sea proteínas,grasas, carbohidratos. Se ha usado TDD.
 
-En esta práctica se ha creado la clase Alimento, donde se guarda informacion nutricial inherente a este, y además, su impacto ambiental, en terminos de kg de gases de efecto invernadero generados, area en metros cuadrados de terreno usada para producirlo/cultivarlo, todos estos datos se toman para una porcion de 100 gramos de cada alimento. El objetivo principal es calcular el valor energetico y el impacto ambiental, haciendo uso del TDD. Y para poner en práctica conceptos dados en clase sobre variables de instancia, clases, metodos de instancia,to_s,entre otros.
+*Fecha entrega: 22-11-2019
 
-*Fecha entrega: 15-11-2019 
-=======
-## Práctica:6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE.Archivo
+## Práctica 6 Desarrollo Dirigido por Pruebas (TDD). INDIVIDUAL. PUNTUABLE
 
 En esta práctica se ha creado la clase Alimento, donde se guarda informacion nutricial inherente a este, y además, su impacto ambiental, en terminos de kg de gases de efecto invernadero generados, area en metros cuadrados de terreno usada para producirlo/cultivarlo, todos estos datos se toman para una porcion de 100 gramos de cada alimento. El objetivo principal es calcular el valor energetico y el impacto ambiental, haciendo uso del TDD. Y para poner en práctica conceptos dados en clase sobre variables de instancia, clases, metodos de instancia,to_s,entre otros.
 
@@ -38,7 +36,7 @@ En esta práctica se ha creado la clase Alimento, donde se guarda informacion nu
 
 
 # HuellaNutricional
->>>>>>> desarrollo
+
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/huella_nutricional`. To experiment with that code, run `bin/console` for an interactive prompt.
 

@@ -228,7 +228,7 @@ RSpec.describe HuellaNutricional do
 				expect(acc_vea).to be >= 3000 
 				expect(acc_c.to_i).to be_between((0.10*acc_vea).to_i,(0.401*acc_vea).to_i).inclusive 
 				expect(acc_p.to_i).to be_between((0.16*acc_vea).to_i,(0.201*acc_vea).to_i).inclusive 
-				expect(acc_gei). to eq (800)
+				expect(acc_gei.to_i). to eq (377)
 				
 				
 			end

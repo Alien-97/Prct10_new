@@ -73,4 +73,7 @@ class Lista
 			end
 		end
     end
+
+    def pop_head
+    end
 end

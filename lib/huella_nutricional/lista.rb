@@ -112,7 +112,24 @@ class Lista
     end
 
     def delete(posicion)
-    	
+	      if posicion.is_a? Integer
+
+		      if posicion == 0 
+		        pop_head
+		      elsif posicion == (@sz - 1)
+		        pop_tail
+		      elsif posicion < (@sz - 1) && posicion > 0
+		        iterator = @head
+		        posicion.times do |i|
+		          iterator = iterator.next
+		        end   
+		        iterator.next.prev = iterator.prev
+		        iterator.prev.next = iterator.next
+		        @sz = @sz - 1
+		      end
+	      end
+	      
+	    return nil
     end
     
 

@@ -200,6 +200,12 @@ RSpec.describe HuellaNutricional do
 			end
 		end
 
+		context "Probando metodos borrado en la lista"do
+			it "Probando metodo borrado por la cabeza "do
+				expect(@lista_dieta_guay.respond_to?("pop_head")).to eq true
+			end
+		end
+
 		context "Comprobando la dieta guay"do
 			it"Comprobando que la dieta se ajusta a los parámetros pedidos"do
 				@lista_dieta_guay.push_head(@nodo2)

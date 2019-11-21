@@ -9,7 +9,8 @@ class Alimento
 
 
 	def valor_energetico_alimento
-		@val_energetico_alimento = (((4 * @carbohidratos + 9 * @proteinas + 4 * @lipidos) * 100).round) / 100.0
+		@val_energetico_alimento = (((4 * @carbohidratos + 4 * @proteinas + 9 * @lipidos) * 100).round) / 100.0
+
 		@val_energetico_alimento
 	end
 
@@ -20,6 +21,8 @@ class Alimento
 		else
 			raise ArgumentError, " Argumento pasado para multiplicar el objeto " + "#{@nombre_alimento} " + " no es un numero"
 		end
+
+		#puts " Este es el alimento " + "#{@nombre_alimento}" + " Estos son los gramos de proteinas " + "#{@proteinas}" + " g de carbohidratos " + " #{@carbohidratos} " + " g de lipidos " + " #{@lipido} "
 
 	end
 
@@ -65,10 +68,10 @@ class Alimento
 		prev_item = " "
 		if alimentos.length >= 2
 			alimentos.each do |alimento,indice|
-				puts "El indice que estoy analizando ahora (1) #{indice}"
+				
 				if indice.to_i >= 1
 					if (alimento.sexo != prev_item)
-						puts "El indice que estoy analizando ahora (2) " + indice.to_i
+						
 						raise ArgumentError, "El menu lo debe consumir la misma persona, debe especificar el mismo genero en cada alimento"
 					end
 				end

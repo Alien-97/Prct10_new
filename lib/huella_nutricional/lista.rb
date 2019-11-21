@@ -47,4 +47,7 @@ class Lista
 
       return nil
     end
+
+    def insert(posicion,value)
+    end
 end

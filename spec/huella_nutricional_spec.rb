@@ -213,6 +213,11 @@ RSpec.describe HuellaNutricional do
 				expect(@lista_pruebas.sz).to eq 0
 			end
 
+			it" Probando metodo eliminacion en cualquier posicion"do
+				@lista_pruebas.push_head(@nodo7)
+				@lista_pruebas.push_head(@nodo8)
+				expect(@lista_pruebas.respond_to?("delete")).to eq true
+			end
 		end
 
 		context "Comprobando la dieta guay"do

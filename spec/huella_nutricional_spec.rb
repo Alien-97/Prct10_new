@@ -240,11 +240,9 @@ RSpec.describe HuellaNutricional do
 				while iterator!=nil
 					if iterator!= @lista_dieta_guay.head
 						#puts " Sexo del nodo actual " + "#{iterator.value.sexo}"
-						puts " Sexo del nodo previo " + "#{iterator.prev.value.sexo}"
+						
 						expect(iterator.value.sexo).to eq iterator.prev.value.sexo
-						puts " Sexo de la persona  " + "#{iterator.value.sexo}"
-						puts " Alimento " + "#{iterator.value.nombre_alimento}"
-						puts " el iterador " + "#{i}"
+						
 					end
 
 					aux = iterator.value
@@ -262,9 +260,6 @@ RSpec.describe HuellaNutricional do
 					i = i +1
 				end
 
-				puts acc_gei
-				puts acc_t
-				puts acc_vea
 				expect(acc_vea).to be >= 3000 
 				expect(acc_c.to_i).to be_between((0.10*acc_vea).to_i,(0.401*acc_vea).to_i).inclusive 
 				expect(acc_p.to_i).to be_between((0.16*acc_vea).to_i,(0.201*acc_vea).to_i).inclusive 

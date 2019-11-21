@@ -22,7 +22,7 @@ class Alimento
 			raise ArgumentError, " Argumento pasado para multiplicar el objeto " + "#{@nombre_alimento} " + " no es un numero"
 		end
 
-		#puts " Este es el alimento " + "#{@nombre_alimento}" + " Estos son los gramos de proteinas " + "#{@proteinas}" + " g de carbohidratos " + " #{@carbohidratos} " + " g de lipidos " + " #{@lipido} "
+		
 
 	end
 

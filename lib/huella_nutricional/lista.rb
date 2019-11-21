@@ -94,7 +94,21 @@ class Lista
     end
 
     def pop_tail
-    	
+    	if(@tail == nil)
+        	return nil
+      	else
+        	val= @tail
+        	node = @tail.prev
+        	@tail = node
+        	if @tail != nil
+          		@tail.next = nil
+       	 	else
+        		@head = nil
+        	end
+        	@sz = @sz -1
+        end
+
+        return val
     end
 
       

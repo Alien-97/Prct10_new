@@ -186,7 +186,7 @@ RSpec.describe HuellaNutricional do
 			end
 
 			it"Probando metodo insercion por la cola"do
-				expect(@lista_pruebas.respond_to?("push_back")).to eq true
+				expect(@lista_pruebas.respond_to?("push_tail")).to eq true
 			end
 
 		end

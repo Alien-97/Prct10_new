@@ -29,4 +29,8 @@ class Lista
       return nil
       
     end
+
+    def push_tail(value)
+     
+    end
 end

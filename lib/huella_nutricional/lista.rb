@@ -83,7 +83,7 @@ class Lista
         node = @head.next
         @head = node
         if @head != nil
-          @head.prev = nil
+          	@head.prev = nil
         else
         	@tail = nil
         end
@@ -94,5 +94,11 @@ class Lista
     end
 
     def pop_tail
+    	
     end
+
+      
+    
+
+
 end

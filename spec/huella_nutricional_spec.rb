@@ -209,6 +209,8 @@ RSpec.describe HuellaNutricional do
 
 			it"Probando metodo borrado por la cola"do
 				expect(@lista_pruebas.respond_to?("pop_tail")).to eq true
+				@lista_pruebas.pop_tail
+				expect(@lista_pruebas.sz).to eq 0
 			end
 
 		end

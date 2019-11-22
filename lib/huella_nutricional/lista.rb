@@ -76,21 +76,21 @@ class Lista
 
     def pop_head
 
-	  if(@head == nil)
-        return nil
-      else
-        val= @head
-        node = @head.next
-        @head = node
-        if @head != nil
-          	@head.prev = nil
-        else
-        	@tail = nil
-        end
-        @sz = @sz -1
-      end
+		if(@head == nil)
+			return nil
+		  	else
+		    val= @head
+		    node = @head.next
+		    @head = node
+		    if @head != nil
+		      	@head.prev = nil
+		    else
+		    	@tail = nil
+		    end
+		    @sz = @sz -1
+		end
 
-      return val
+		return val
     end
 
     def pop_tail
@@ -112,22 +112,24 @@ class Lista
     end
 
     def delete(posicion)
-	      if posicion.is_a? Integer
+	    if posicion.is_a? Integer
 
-		      if posicion == 0 
-		        pop_head
-		      elsif posicion == (@sz - 1)
+		    if posicion == 0 
+		    	pop_head
+		    elsif posicion == (@sz - 1)
 		        pop_tail
-		      elsif posicion < (@sz - 1) && posicion > 0
+		    elsif posicion < (@sz - 1) && posicion > 0
 		        iterator = @head
 		        posicion.times do |i|
-		          iterator = iterator.next
-		        end   
-		        iterator.next.prev = iterator.prev
-		        iterator.prev.next = iterator.next
-		        @sz = @sz - 1
-		      end
-	      end
+		        iterator = iterator.next
+		    end   
+
+		    iterator.next.prev = iterator.prev
+		    iterator.prev.next = iterator.next
+		    @sz = @sz - 1
+
+		    end
+	    end
 	      
 	    return nil
     end

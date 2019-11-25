@@ -173,6 +173,12 @@ RSpec.describe HuellaNutricional do
 
 			@lista_pruebas = Lista.new
 
+			@lista_enumerable = Lista.new
+
+			@lista_enumerable.push_head(@nodo)
+			@lista_enumerable.push_head(@nodo5)
+			@lista_enumerable.push_head(@nodo6)
+
 		end
 
 	  	context " Probando las variables de instancia que deben existir "do
@@ -290,6 +296,12 @@ RSpec.describe HuellaNutricional do
 				expect(acc_gei.to_i). to eq (377)
 				expect(acc_t.to_i).to eq (1103)
 				
+			end
+		end
+
+		context "Pruebas del modulo enumerable para listas "do
+			it "Pruebas para enumerable alimentos, collect"do
+				expect(@lista_enumerable.collect { |i| i.to_s}).to eq (["#{@nodo6}","#{@nodo5}","#{@nodo}"])
 			end
 		end
   	end

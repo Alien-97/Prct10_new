@@ -111,6 +111,12 @@ class Lista
         return val
     end
 
+    def to_s
+    	s = ""
+        each {|i| s += "#{i.to_s}\n"}
+        s
+    end
+
     def delete(posicion)
 	    if posicion.is_a? Integer
 

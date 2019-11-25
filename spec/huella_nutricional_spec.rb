@@ -10,7 +10,9 @@ RSpec.describe HuellaNutricional do
 		@cafe = Alimento.new("cafe",0.4,0.3,0.1,0.0,0.0,"hombre",100)
 		@biste = Alimento.new("biste",180.0,400.0,54.5,85.9,10.5,"hombre",100)
 		@caviar = Alimento.new("caviar",400.0,850.0,199.5,120.4,21.8,"hombre",100)
-
+		@pollo = Alimento.new("pollo",5.7,7.1,20.6,0.0,5.6,"hombre",100)
+    	@leche_vaca = Alimento.new("leche vaca",3.2,8.9,3.3,4.8,3.2,"hombre",100)
+    	@chocolate = Alimento.new("chocolate",2.3,3.4,5.3,47.0,30.0,"hombre", 100)
 		
 		@menu_hombre = [@carne_vaca,@huevos,@cafe,@biste,@caviar,@caviar,@biste]
 
@@ -111,6 +113,16 @@ RSpec.describe HuellaNutricional do
 
 		it" Se ha de poder obtener el impacto ambiental para una mujer"do
 			expect(@carne_vaca.impacto_ambiental(@menu_mujer)).to eq(261.3)
+		end
+	end
+
+	context "Pruebas de comparacion de alimentos "do
+		it "Prueba para comparable menor"do
+			expect(@leche_vaca < @pollo).to eq true
+		end
+
+		it "Prueba para comparable mayor"do
+			expect(@leche_vaca > @pollo).to eq false
 		end
 	end
 

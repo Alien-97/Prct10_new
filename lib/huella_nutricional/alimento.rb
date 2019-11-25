@@ -22,7 +22,6 @@ class Alimento
 			raise ArgumentError, " Argumento pasado para multiplicar el objeto " + "#{@nombre_alimento} " + " no es un numero"
 		end
 
-		
 
 	end
 

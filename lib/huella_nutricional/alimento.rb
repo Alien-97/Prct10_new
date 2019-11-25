@@ -1,5 +1,7 @@
 class Alimento
 
+	include Comparable
+	
 	attr_accessor :nombre_alimento,:kg_gei,:area_terreno,:proteinas,:carbohidratos,:lipidos,:sexo,:cantidad_elemento
 
 	def initialize(nombre_alimento,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo,cantidad_elemento)
@@ -21,9 +23,9 @@ class Alimento
 		else
 			raise ArgumentError, " Argumento pasado para multiplicar el objeto " + "#{@nombre_alimento} " + " no es un numero"
 		end
-
-
 	end
+
+	
 
 	def consumo_adecuado_proteinas
 
@@ -45,6 +47,8 @@ class Alimento
 
 	end
 
+
+
 	def to_s
 		salida = "#{ "100 g de " + @nombre_alimento + " los kg de gases de efecto invernadero que genera son: " + @kg_gei.to_s + " y la cantidad de terreno en metros cuadrados usado en producirlo son: " + @area_terreno.to_s + " Comer un kilo de " + @nombre_alimento + " te da " + @proteinas.to_s + " gramos de proteinas " + " y " + @carbohidratos.to_s + " gramos de carbohidratos " + " y " + @lipidos.to_s + " gramos de lipidos " + " Su valor energetico es: " + valor_energetico_alimento.to_s} "
 	end
@@ -57,6 +61,10 @@ class Alimento
 		elsif consumo_adecuado_proteinas.is_a?(String) == true
 			consumo_adecuado_proteinas
 		end
+	end
+
+	def <=> (other)
+		valor_energetico_alimento <=> other.valor_energetico_alimento
 	end
 
 	def impacto_ambiental(alimentos)

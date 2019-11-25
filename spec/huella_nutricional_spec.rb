@@ -124,6 +124,18 @@ RSpec.describe HuellaNutricional do
 		it "Prueba para comparable mayor"do
 			expect(@leche_vaca > @pollo).to eq false
 		end
+
+		it "Prueba para comparable mayor o igual"do
+			expect(@leche_vaca >= @pollo).to eq false
+		end
+
+		it "Prueba para comparable menor o igual"do
+			expect(@leche_vaca <= @pollo).to eq true
+		end
+
+		it "Prueba para comparable between"do
+			expect(@pollo.between?(@leche_vaca,@huevos)).to eq true
+		end
 	end
 
   end

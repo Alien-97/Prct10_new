@@ -14,6 +14,7 @@ RSpec.describe HuellaNutricional do
     	@leche_vaca = Alimento.new("leche vaca",3.2,8.9,3.3,4.8,3.2,"hombre",100)
     	@chocolate = Alimento.new("chocolate",2.3,3.4,5.3,47.0,30.0,"hombre", 100)
 		
+		@lentejas = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
 		@menu_hombre = [@carne_vaca,@huevos,@cafe,@biste,@caviar,@caviar,@biste]
 
 		@pasta_con_atun = Alimento.new("pasta con atun",79.0,280.0,58.9,77.4,80.6,"mujer",100)
@@ -21,8 +22,6 @@ RSpec.describe HuellaNutricional do
 		@mousse_chocolate = Alimento.new("mouse chocolate",99.4,95.6,86.7,99.3,103.8,"mujer",100)
 
 		@menu_mujer = [@pasta_con_atun,@arroz_a_la_cubana,@mousse_chocolate]
-
-		#@lista_dieta_guay = Lista.new
 	end
 
 
@@ -304,17 +303,56 @@ RSpec.describe HuellaNutricional do
 		end
 
 		context "Pruebas del modulo enumerable para listas "do
-			it "Pruebas para enumerable alimentos, collect"do
+			it "Prueba del collect"do
 				expect(@lista_enumerable.head.value.to_s).to eq ("#{@nodoguay.value}")
 				expect(@lista_enumerable.head.next.value.to_s).to eq ("#{@nodoguay1.value}")
 				expect(@lista_enumerable.head.next.next.value.to_s).to eq ("#{@nodoguay2.value}")
 				expect(@lista_enumerable.collect { |i| i.to_s}).to eq (["#{@nodoguay.value}","#{@nodoguay1.value}","#{@nodoguay2.value}"])
 			end
 
-			it "Pruebas para enumerable etiquetas, select" do
+			it "Prueba del select" do
 				expect(@lista_enumerable.select { |i| i.between?(@nodoguay2.value,@nodoguay.value)}). to eq ([@nodoguay.value,@nodoguay1.value,@nodoguay2.value])
 			end
+
+			it "Prueba del max"do
+				expect(@lista_enumerable.max). to eq @nodoguay.value
+			end
+
+			it "Prueba del min"do
+				expect(@lista_enumerable.min). to eq @nodoguay2.value
+			end
+
+			it "Prueba de sort"do
+				expect(@lista_enumerable.sort).to eq ([@nodoguay2.value,@nodoguay1.value,@nodoguay.value])
+			end
 		end
+  	end
+
+  	describe PlatoHuellaNutricional do
+  		before :all do
+  			@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
+        	@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+        	@lentejas = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
+
+  			@nodo_carne_vaca = Nodo.new(@carne_vaca,nil,nil)
+        	@nodo_huevos = Nodo.new(@huevos,nil,nil)
+        	@nodo_lentejas = Nodo.new(@lentejas,nil,nil)
+
+
+        	@lista_alimentos = Lista.new
+
+        	@lista_alimentos.push_tail(@nodo_carne_vaca)
+        	@lista_alimentos.push_tail(@nodo_huevos)
+        	@lista_alimentos.push_tail(@nodo_lentejas)
+
+        	@plato_tradicional = PlatoHuellaNutricional.new("plato tradicional",@lista_alimentos)
+  		end
+
+  		context " Pruebas de clase "do
+  			it "Pruebas de clase a la que pertenece  la clase Plato que representa la huella nutricional"do
+  				expect(@plato_tradicional.class).to be PlatoHuellaNutricional
+  			end
+  		end
   	end
 
 end

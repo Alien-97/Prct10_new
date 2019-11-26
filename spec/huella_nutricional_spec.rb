@@ -175,9 +175,13 @@ RSpec.describe HuellaNutricional do
 
 			@lista_enumerable = Lista.new
 
-			@lista_enumerable.push_head(@nodo)
-			@lista_enumerable.push_head(@nodo5)
-			@lista_enumerable.push_head(@nodo6)
+			@nodoguay = Nodo.new(Alimento.new("chocolate",2.3,3.4,5.3,47.0,30.0,"hombre", 100),nil,nil)
+			@nodoguay1 = Nodo.new(Alimento.new("pollo",5.7,7.1,20.6,0.0,5.6,"hombre",100),nil,nil)
+			@nodoguay2 = Nodo.new(Alimento.new("leche vaca",3.2,8.9,3.3,4.8,3.2,"hombre",100),nil,nil)
+
+			@lista_enumerable.push_head(@nodoguay2)
+			@lista_enumerable.push_head(@nodoguay1)
+			@lista_enumerable.push_head(@nodoguay)
 
 		end
 
@@ -301,7 +305,14 @@ RSpec.describe HuellaNutricional do
 
 		context "Pruebas del modulo enumerable para listas "do
 			it "Pruebas para enumerable alimentos, collect"do
-				expect(@lista_enumerable.collect { |i| i.to_s}).to eq (["#{@nodo6}","#{@nodo5}","#{@nodo}"])
+				expect(@lista_enumerable.head.value.to_s).to eq ("#{@nodoguay.value}")
+				expect(@lista_enumerable.head.next.value.to_s).to eq ("#{@nodoguay1.value}")
+				expect(@lista_enumerable.head.next.next.value.to_s).to eq ("#{@nodoguay2.value}")
+				expect(@lista_enumerable.collect { |i| i.to_s}).to eq (["#{@nodoguay.value}","#{@nodoguay1.value}","#{@nodoguay2.value}"])
+			end
+
+			it "Pruebas para enumerable etiquetas, select" do
+				expect(@lista_enumerable.select { |i| i.between?(@nodoguay2.value,@nodoguay.value)}). to eq ([@nodoguay.value,@nodoguay1.value,@nodoguay2.value])
 			end
 		end
   	end

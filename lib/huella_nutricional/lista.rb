@@ -2,7 +2,7 @@
 Nodo = Struct.new(:value,:next,:prev)
 
 class Lista
-	
+	include Enumerable
 	attr_reader :head, :tail,:sz
 	def initialize()
 		@head = nil
@@ -116,6 +116,14 @@ class Lista
         each {|i| s += "#{i.to_s}\n"}
         s
     end
+
+    def each
+		iterator = @head
+		while iterator != nil do
+			yield iterator.value
+			iterator = iterator.next
+		end
+	end
 
     def delete(posicion)
 	    if posicion.is_a? Integer

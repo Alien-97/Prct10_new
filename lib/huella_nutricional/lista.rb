@@ -113,7 +113,7 @@ class Lista
 
     def to_s
     	s = ""
-        each {|i| s += "#{i.to_s}\n"}
+        each {|i| s += "#{i.nombre_alimento.to_s}\n"}
         s
     end
 

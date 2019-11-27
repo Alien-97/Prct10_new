@@ -1,15 +1,22 @@
+require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/alimento.rb'
+require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/lista.rb'
 class PlatoHuellaNutricional
 
 	attr_reader :nombre,:lista_alimentos,:acc_cantidad_alimentos
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
 		@nombre,@lista_alimentos,@acc_cantidad_alimentos= nombre,lista_alimentos,acc_cantidad_alimentos
 
+		i = 0
 		lista_alimentos.each do |alimento|
+
 			if alimento.class == Alimento
+				puts 
 				@acc_cantidad_alimentos += alimento.cantidad_elemento
 			else
 				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"
 			end
+
+			i+=1
 		end
 
 	end
@@ -81,3 +88,26 @@ class PlatoHuellaNutricional
 	end
 
 end
+
+=begin
+@carne_vaca = Alimento.new("carne de vaca",50,164.0,21.1,0.0,3.1,"hombre",100)
+@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+@lentejas = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
+
+@nodo_carne_vaca = Nodo.new(@carne_vaca,nil,nil)
+@nodo_huevos = Nodo.new(@huevos,nil,nil)
+@nodo_lentejas = Nodo.new(@lentejas,nil,nil)
+
+@lista_alimentos_plato = Lista.new
+
+@lista_alimentos_plato.push_tail(@nodo_carne_vaca)
+@lista_alimentos_plato.push_tail(@nodo_huevos)
+@lista_alimentos_plato.push_tail(@nodo_lentejas)
+
+@acc_cantidad_alimentos = 0
+
+
+@plato1 = PlatoHuellaNutricional.new( " plato tradicional ",@lista_alimentos_plato,@acc_cantidad_alimentos)
+
+puts @plato1.to_s
+=end

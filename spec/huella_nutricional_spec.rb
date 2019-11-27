@@ -387,8 +387,12 @@ RSpec.describe HuellaNutricional do
 
   		context "El metodo que devuelve la cantidad en g  conjunto de  los alimentos"do
 
-  			it "Debe existir el metodo que devuelve la cantidad total de g del conjunto de  alimentos "do
+  			it "Debe existir el metodo que devuelve la cantidad total de g del conjunto de alimentos "do
   				expect(@plato_tradicional.respond_to?("peso_conjunto_alimentos")).to eq true
+  			end
+
+  			it "Se ha de poder obtener la cantidad total de g del conjunto de alimentos "do
+  				expect(@plato_tradicional.peso_conjunto_alimentos).to be >= 200
   			end
   		end
   		

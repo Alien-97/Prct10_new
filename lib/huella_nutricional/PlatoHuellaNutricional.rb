@@ -6,5 +6,6 @@ class PlatoHuellaNutricional
 	end
 
 	def peso_conjunto_alimentos
+		
 	end
 end

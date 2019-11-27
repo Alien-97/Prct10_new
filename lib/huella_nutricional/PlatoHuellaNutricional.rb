@@ -87,6 +87,26 @@ class PlatoHuellaNutricional
 		acc_vct
 	end
 
+	def to_s
+        s = ""
+
+        if @nombre.is_a?(String)
+
+        	s += "nombre del plato " + @nombre + " se compone de :" + "\n\n"
+
+        	
+        	s += @lista_alimentos.to_s + "\n"
+
+        	s += "peso total en gramos de los alimentos del plato " + @acc_cantidad_alimentos.to_s + "\n"
+
+        	s += "porcentaje de proteinas en el plato " + porcentaje_proteinas.to_s + "\n"
+
+        	s += "porcentaje de carbohidratos en el plato " + porcentaje_carbohidratos.to_s + "\n"
+
+        	s += "porcentaje de lipidos en el plato " + porcentaje_lipidos.to_s + "\n\n"
+        end
+    end
+
 end
 
 =begin

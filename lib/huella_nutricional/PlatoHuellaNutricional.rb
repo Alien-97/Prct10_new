@@ -75,6 +75,9 @@ class PlatoHuellaNutricional
 				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"
 			end
 		end
+
+		acc_vct = acc_vct.round(2)
+		acc_vct
 	end
 
 end

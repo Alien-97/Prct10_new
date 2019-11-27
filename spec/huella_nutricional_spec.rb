@@ -379,6 +379,8 @@ RSpec.describe HuellaNutricional do
   			it " Debe existir el getter del nombre del alimento"do
   				expect(@plato_tradicional.respond_to?("nombre")).to eq true
   			end
+
+  			
   		end
   		
   	end

@@ -400,6 +400,12 @@ RSpec.describe HuellaNutricional do
   			it "Debe existir el metodo que devuelve el porcentaje de proteinas " do
   				expect(@plato_tradicional.respond_to?("porcentaje_proteinas")).to eq true
   			end
+
+  			it "Se ha de poder obtener el porcentaje de proteinas" do
+  				expect(@plato_tradicional.porcentaje_proteinas).to eq 57.6 
+  			end
+
+
   		end
   		
   	end

@@ -6,6 +6,7 @@ class PlatoHuellaNutricional
 	end
 
 	def peso_conjunto_alimentos
+
 		acc_cantidad_alimento = 0
 
 		lista_alimentos.each do |alimento|
@@ -20,7 +21,9 @@ class PlatoHuellaNutricional
 	end
 
 	def porcentaje_proteinas
+
 		
+
 	end
 
 end

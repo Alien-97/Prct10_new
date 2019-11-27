@@ -6,6 +6,13 @@ class PlatoHuellaNutricional
 	end
 
 	def peso_conjunto_alimentos
-		
+		acc_cantidad_alimento = 0
+
+		lista_alimentos.each do |alimento|
+
+			acc_cantidad_alimento += alimento.cantidad_elemento
+		end
+
+		acc_cantidad_alimento
 	end
 end

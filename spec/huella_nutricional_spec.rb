@@ -345,7 +345,8 @@ RSpec.describe HuellaNutricional do
   			@lista_alimentos_plato.push_tail(@nodo_huevos)
   			@lista_alimentos_plato.push_tail(@nodo_lentejas)
 
-  			@plato_tradicional = PlatoHuellaNutricional.new("plato tradicional",@lista_alimentos_plato)
+  			@acc_cantidad_alimentos = 0
+  			@plato_tradicional = PlatoHuellaNutricional.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos)
 
   		end
 
@@ -373,6 +374,9 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional.instance_variable_defined?(:@lista_alimentos)).to eq true
   			end
 
+  			it "Debe existir la cantidad del conjunto de alimentos"do
+  				expect(@plato_tradicional.instance_variable_defined?(:@acc_cantidad_alimentos)).to eq true
+  			end
   		end
 
   		context "Probando los getters y setters del plato"do
@@ -383,17 +387,11 @@ RSpec.describe HuellaNutricional do
   			it " Debe existir el getter de la lista de alimentos"do
   				expect(@plato_tradicional.respond_to?("lista_alimentos")).to eq true
   			end
-  		end
 
-  		context "El metodo que devuelve la cantidad en g  conjunto de  los alimentos"do
-
-  			it "Debe existir el metodo que devuelve la cantidad total de g del conjunto de alimentos "do
-  				expect(@plato_tradicional.respond_to?("peso_conjunto_alimentos")).to eq true
+  			it " Debe existir el getter de la cantidad de alimentos "do
+  				expect(@plato_tradicional.respond_to?("acc_cantidad_alimentos")).to eq true
   			end
 
-  			it "Se ha de poder obtener la cantidad total de g del conjunto de alimentos "do
-  				expect(@plato_tradicional.peso_conjunto_alimentos).to be >= 200
-  			end
   		end
 
   		context " Deben existir los metodos que calculan el porcentaje de nutrientes en el plato"do
@@ -402,14 +400,16 @@ RSpec.describe HuellaNutricional do
   			end
 
   			it "Se ha de poder obtener el porcentaje de proteinas" do
-  				expect(@plato_tradicional.porcentaje_proteinas).to eq 57.6 
+  				expect(@plato_tradicional.porcentaje_proteinas).to eq 19.2 
   			end
 
   			it " Debe existir el metodo que devuelve el porcentaje de carbohidratos " do
   				expect(@plato_tradicional.respond_to?("porcentaje_carbohidratos")).to eq true
+  				expect(@plato_tradicional.porcentaje_carbohidratos).to eq 17.7
   			end
+
+  			
   		end
-  		
   	end
 
 

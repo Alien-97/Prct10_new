@@ -395,6 +395,12 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional.peso_conjunto_alimentos).to be >= 200
   			end
   		end
+
+  		context " Deben existir los metodos que calculan el porcentaje de nutrientes en el plato"do
+  			it "Debe existir el metodo que devuelve el porcentaje de proteinas " do
+  				expect(@plato_tradicional.respond_to?("porcentaje_proteinas")).to eq true
+  			end
+  		end
   		
   	end
 

@@ -65,4 +65,16 @@ class PlatoHuellaNutricional
 
 	end
 
+	def valor_calorico_total
+		acc_vct = 0
+
+		lista_alimentos.each do |alimento|
+			if alimento.instance_of? Alimento
+				acc_vct += alimento.valor_energetico_alimento
+			else
+				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"
+			end
+		end
+	end
+
 end

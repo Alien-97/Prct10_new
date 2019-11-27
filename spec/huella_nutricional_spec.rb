@@ -408,11 +408,20 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional.porcentaje_carbohidratos).to eq 17.7
   			end
 
-  			it " Debe existir el metodo que devuelve el porcentaje de lipidos " do
+  			it " Debe existir el metodo que devuelve el porcentaje de lipidos, y se ha de poder obtener dicho valor " do
   				expect(@plato_tradicional.respond_to?("porcentaje_lipidos")).to eq true
   				expect(@plato_tradicional.porcentaje_lipidos).to eq 5.17
   			end
   		end
+
+  		context " Se calcula el valor calorico total total del plato en kcal"do
+  			it "Debe existir el metodo que calcula el valor calorico total, y se ha de poder obtener dicho valor"do
+  				expect(@plato_tradicional.respond_to?("valor_calorico_total")).to eq true
+  				expect(@plato_tradicional.valor_calorico_total).to eq 582.3
+  			end
+  		end
+
+
   	end
 
 

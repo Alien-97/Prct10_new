@@ -405,7 +405,9 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional.porcentaje_proteinas).to eq 57.6 
   			end
 
-
+  			it " Debe existir el metodo que devuelve el porcentaje de carbohidratos " do
+  				expect(@plato_tradicional.respond_to?("porcentaje_carbohidratos")).to eq true
+  			end
   		end
   		
   	end

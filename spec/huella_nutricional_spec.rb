@@ -369,6 +369,10 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional.instance_variable_defined?(:@nombre)).to eq true
   			end
 
+  			it "Debe existir la lista de alimentos "do
+  				expect(@plato_tradicional.instance_variable_defined?(:@lista_alimentos)).to eq true
+  			end
+
   		end
   		
   	end

@@ -1,6 +1,6 @@
 class PlatoHuellaNutricional
 
 	def initialize(nombre,lista_alimentos)
-		@nombre = nombre
+		@nombre= nombre
 	end
 end

@@ -410,7 +410,7 @@ RSpec.describe HuellaNutricional do
 
   			it " Debe existir el metodo que devuelve el porcentaje de lipidos " do
   				expect(@plato_tradicional.respond_to?("porcentaje_lipidos")).to eq true
-  				expect(@plato_tradicional.porcentaje_carbohidratos).to eq 17.7
+  				expect(@plato_tradicional.porcentaje_lipidos).to eq 5.17
   			end
   		end
   	end

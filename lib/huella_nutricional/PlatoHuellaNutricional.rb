@@ -48,4 +48,21 @@ class PlatoHuellaNutricional
 
 	end
 
+	def porcentaje_lipidos
+
+		acc_lipidos = 0
+
+		lista_alimentos.each do |alimento|
+			if alimento.instance_of? Alimento
+				acc_lipidos += alimento.lipidos
+			else
+				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"
+			end
+		end
+
+		pr_lipidos = ((acc_lipidos/acc_cantidad_alimentos) * 100).round(2)
+		pr_lipidos		
+
+	end
+
 end

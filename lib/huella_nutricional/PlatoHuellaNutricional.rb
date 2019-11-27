@@ -22,8 +22,17 @@ class PlatoHuellaNutricional
 
 	def porcentaje_proteinas
 
-		
+		acc_proteinas = 0
 
+		lista_alimentos.each do |alimento|
+			if alimento.instance_of? Alimento
+				acc_proteinas += alimento.proteinas
+			else
+				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"
+			end
+		end
+
+		acc_proteinas
 	end
 
 end

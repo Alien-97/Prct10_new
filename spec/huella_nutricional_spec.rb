@@ -348,7 +348,55 @@ RSpec.describe HuellaNutricional do
   			@acc_cantidad_alimentos = 0
   			@plato_tradicional = PlatoHuellaNutricional.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos)
 
+  			@salmon = Alimento.new("salmon",6.0,3.7,19.9,0.0,6.6,"hombre",100)
+
+  			@nuez = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
+
+  			@tofu = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+
+  			@camarones = Alimento.new("camarones",18.0,2.0,17.6,1.5,0.6,"hombre",100)
+
+  			@nodo_salmon = Nodo.new(@salmon,nil,nil)
+  			@nodo_nuez = Nodo.new(@nuez,nil,nil)
+  			@nodo_tofu = Nodo.new(@tofu,nil,nil)
+  			@nodo_camarones = Nodo.new(@camarones,nil,nil)
+
+  			@lista_alimentos_dieta_oriental = Lista.new
+
+  			@lista_alimentos_dieta_oriental.push_tail(@nodo_salmon)
+  			@lista_alimentos_dieta_oriental.push_tail(@nodo_nuez)
+  			@lista_alimentos_dieta_oriental.push_tail(@nodo_tofu)
+  			@lista_alimentos_dieta_oriental.push_tail(@nodo_camarones)
+
+  			@acc_cantidad_alimentos2 = 0
+
+  			@plato_dieta_oriental = PlatoHuellaNutricional.new("plato dieta oriental",@lista_alimentos_dieta_oriental,@acc_cantidad_alimentos2)
+
+  			@salmon_2 = @salmon * 2
+  			@nuez_2 = @nuez * 2
+  			@tofu_2 = @tofu * 2
+  			@camarones_2 = @camarones * 2
+
+  			@nodo_salmon_2 = Nodo.new(@salmon,nil,nil)
+  			@nodo_nuez_2 = Nodo.new(@nuez,nil,nil)
+  			@nodo_tofu_2 = Nodo.new(@tofu,nil,nil)
+  			@nodo_camarones_2 = Nodo.new(@camarones,nil,nil)
+
+  			@lista_dieta_oriental_fuerte = Lista.new
+
+  			@lista_dieta_oriental_fuerte.push_tail(@nodo_salmon_2)
+  			@lista_dieta_oriental_fuerte.push_tail(@nodo_nuez_2)
+  			@lista_dieta_oriental_fuerte.push_tail(@nodo_tofu_2)
+  			@lista_dieta_oriental_fuerte.push_tail(@nodo_camarones_2)
+
+  			@acc_cantidad_alimentos3 = 0
+
+
+  			@plato_dieta_oriental_fuerte = PlatoHuellaNutricional.new("plato dieta oriental doble racion", @lista_dieta_oriental_fuerte,@acc_cantidad_alimentos3)
+
   		end
+
+  		
 
   		context "Pruebas clase,tipo y jerarquia de la clase PlatoHuellaNutricional"do
 
@@ -452,6 +500,30 @@ RSpec.describe HuellaNutricional do
 			end
   		end
 
+  		context " Prueba del modulo Comparable de la clase Plato padre" do
+
+  			it " Debe existir el comparable < "do
+  				expect(@plato_tradicional < @plato_dieta_oriental).to eq true
+  			end
+
+  			it " Debe existir el comparable >"do
+  				expect(@plato_tradicional > @plato_dieta_oriental).to eq false
+  			end
+
+  			it " Debe existir  el comparable <= "do
+  				expect(@plato_tradicional <= @plato_dieta_oriental).to eq true
+  			end
+
+  			it "Debe existir el comparable >="do
+  				expect(@plato_tradicional >= @plato_dieta_oriental).to eq false
+  			end
+
+  			it "Debe existir el comparable between"do
+
+  				expect(@plato_dieta_oriental.between?(@plato_tradicional,@plato_dieta_oriental_fuerte)).to eq true
+  			end
+  		end
+
 
   	end
 
@@ -476,6 +548,7 @@ RSpec.describe HuellaNutricional do
 
   			
   			@plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos)
+
   		end
 
   		context "Pruebas clase,tipo y jerarquia de la clase PlatoHuellaNutricional"do
@@ -523,7 +596,12 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional_huella_ambiental.to_s).to eq  @plato_tradicional_huella_ambiental.parent_to_s + "\n\n" + 
   				"Emisiones de gases en kg CO2 " + @plato_tradicional_huella_ambiental.emisiones_gei.to_s + "\n" + "Cantidad de terreno empleado en m2 " + @plato_tradicional_huella_ambiental.area_terreno.to_s + "\n"
   			end
+
+
   		end
+
+  		
+  		
   	end
 
 

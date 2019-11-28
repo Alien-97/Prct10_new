@@ -1,6 +1,7 @@
 require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/alimento.rb'
 require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/lista.rb'
 class PlatoHuellaNutricional
+	include Comparable
 
 	attr_reader :nombre,:lista_alimentos,:acc_cantidad_alimentos
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
@@ -107,6 +108,11 @@ class PlatoHuellaNutricional
         end
     end
 
+    def <=> (other)
+    	if other.instance_of? PlatoHuellaNutricional
+    		valor_calorico_total <=> other.valor_calorico_total
+    	end
+    end
 end
 
 =begin

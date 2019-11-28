@@ -549,6 +549,52 @@ RSpec.describe HuellaNutricional do
   			
   			@plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos)
 
+  			@salmonito = Alimento.new("salmon",6.0,3.7,19.9,0.0,6.6,"hombre",100)
+
+  			@nuecito = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
+
+  			@tofito = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+
+  			@camaronito = Alimento.new("camarones",18.0,2.0,17.6,1.5,0.6,"hombre",100)
+
+  			@nodo_salmonito = Nodo.new(@salmonito,nil,nil)
+  			@nodo_nuecito = Nodo.new(@nuecito,nil,nil)
+  			@nodo_tofito= Nodo.new(@tofito,nil,nil)
+  			@nodo_camaronito = Nodo.new(@camaronito,nil,nil)
+
+  			@lista_alimentos_dieta_orientall = Lista.new
+
+  			@lista_alimentos_dieta_orientall.push_tail(@nodo_salmonito)
+  			@lista_alimentos_dieta_orientall.push_tail(@nodo_nuecito)
+  			@lista_alimentos_dieta_orientall.push_tail(@nodo_tofito)
+  			@lista_alimentos_dieta_orientall.push_tail(@nodo_camaronito)
+
+  			@acc_cantidad_alimentoss2 = 0
+
+  			@plato_dieta_orientall = PlatoHuellaAmbiental.new("plato dieta oriental",@lista_alimentos_dieta_orientall,@acc_cantidad_alimentoss2)
+
+  			@salmonito_2 = @salmonito * 2
+  			@nuecito_2 = @nuecito * 2
+  			@tofito_2 = @tofito * 2
+  			@camaronito_2 = @camaronito * 2
+
+  			@nodo_salmonito_2 = Nodo.new(@salmonito_2,nil,nil)
+  			@nodo_nuecito_2 = Nodo.new(@nuecito_2,nil,nil)
+  			@nodo_tofito_2 = Nodo.new(@tofito_2,nil,nil)
+  			@nodo_camaronito_2 = Nodo.new(@camaronito,nil,nil)
+
+  			@lista_dieta_orientall_fuerte = Lista.new
+
+  			@lista_dieta_orientall_fuerte.push_tail(@nodo_salmonito_2)
+  			@lista_dieta_orientall_fuerte.push_tail(@nodo_nuecito_2)
+  			@lista_dieta_orientall_fuerte.push_tail(@nodo_tofito_2)
+  			@lista_dieta_orientall_fuerte.push_tail(@nodo_camaronito_2)
+
+  			@acc_cantidad_alimentoss3 = 0
+
+
+  			@plato_dieta_orientall_fuerte = PlatoHuellaAmbiental.new("plato dieta oriental doble racion", @lista_dieta_orientall_fuerte,@acc_cantidad_alimentoss3)
+
   		end
 
   		context "Pruebas clase,tipo y jerarquia de la clase PlatoHuellaNutricional"do
@@ -597,10 +643,8 @@ RSpec.describe HuellaNutricional do
   				"Emisiones de gases en kg CO2 " + @plato_tradicional_huella_ambiental.emisiones_gei.to_s + "\n" + "Cantidad de terreno empleado en m2 " + @plato_tradicional_huella_ambiental.area_terreno.to_s + "\n"
   			end
 
-
   		end
 
-  		
   		
   	end
 

@@ -4,7 +4,7 @@ require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prá
 class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	
-	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos,emisiones_gei,m2_terreno)
+	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
 		
 
 	end

@@ -357,7 +357,7 @@ RSpec.describe HuellaNutricional do
   			end
 
   			it "Pruebas de tipo"do
-  				expect(@plato_tradicional).to be_an_instance_of(PlatoHuellaNutricional)
+  				expect(@plato_tradicional.instance_of? PlatoHuellaNutricional).to eq true
   			end
 
   			it "Pruebas de jerarquía "do
@@ -476,13 +476,13 @@ RSpec.describe HuellaNutricional do
 
   			@emisiones_gei = 0
   			@m2_terreno = 0
-  			@plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,acc_cantidad_alimentos,emisiones_gei,m2_terreno)
+  			@plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos,@emisiones_gei,@m2_terreno)
   		end
 
   		context "Pruebas clase,tipo y jerarquia de la clase PlatoHuellaNutricional"do
 
   			it "Pruebas de tipo"do
-  				expect(@plato_tradicional_huella_ambiental.respond_to? PlatoHuellaAmbiental).to eq true
+  				expect(@plato_tradicional_huella_ambiental.instance_of?PlatoHuellaAmbiental).to eq true
   			end
 
   			it "Pruebas de jerarquía del objeto"do
@@ -493,7 +493,6 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional_huella_ambiental.class).to eq PlatoHuellaAmbiental
   			end
   		end
-
   	end
 
 

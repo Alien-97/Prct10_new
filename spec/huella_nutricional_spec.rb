@@ -520,8 +520,8 @@ RSpec.describe HuellaNutricional do
   			end
 
   			it " Se debe poder obtener la salida formateada de la eficiencia energetica del plato "do
-  				puts "IMPRIMIENDO la clase padre "   + @plato_tradicional_huella_ambiental.class.superclass.name
-  				expect(@plato_tradicional_huella_ambiental.to_s).to eq  "El plato se llama: " + @plato_tradicional_huella_ambiental.nombre + "\n" + "Las emisiones de gei en kg son: " + @plato_tradicional_huella_ambiental.emisiones_gei.to_s + "\n" + "La cantidad de terreno usado en m2 " + @plato_tradicional_huella_ambiental.area_terreno.to_s
+  				expect(@plato_tradicional_huella_ambiental.to_s).to eq  @plato_tradicional_huella_ambiental.parent_to_s + "\n\n" + 
+  				"Emisiones de gases en kg CO2 " + @plato_tradicional_huella_ambiental.emisiones_gei.to_s + "\n" + "Cantidad de terreno empleado en m2 " + @plato_tradicional_huella_ambiental.area_terreno.to_s + "\n"
   			end
   		end
   	end

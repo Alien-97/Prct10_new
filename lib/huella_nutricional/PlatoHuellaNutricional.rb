@@ -103,6 +103,7 @@ class PlatoHuellaNutricional
         	s += "porcentaje de carbohidratos en el plato " + porcentaje_carbohidratos.to_s + "\n"
 
         	s += "porcentaje de lipidos en el plato " + porcentaje_lipidos.to_s + "\n\n"
+        	s
         end
     end
 

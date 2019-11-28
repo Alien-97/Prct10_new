@@ -5,7 +5,7 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
-		
+		super(nombre,lista_alimentos,acc_cantidad_alimentos)
 
 	end
 end

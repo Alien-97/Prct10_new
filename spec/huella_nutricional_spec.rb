@@ -514,7 +514,10 @@ RSpec.describe HuellaNutricional do
   				expect(@plato_tradicional_huella_ambiental.emisiones_gei).to eq 54.6
   			end
 
-  			
+  			it " Debe existir metodo que devuelve valor total del area de terreno utilizada para producir los alimentos del plato"do
+  				expect(@plato_tradicional_huella_ambiental.respond_to?("area_terreno")).to eq true
+  				expect(@plato_tradicional_huella_ambiental.area_terreno).to eq 173.1
+  			end
   		end
   	end
 

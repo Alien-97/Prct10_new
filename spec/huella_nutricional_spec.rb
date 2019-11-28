@@ -458,7 +458,7 @@ RSpec.describe HuellaNutricional do
 
   	describe PlatoHuellaAmbiental do
   		before :all do
-  			@carne_vaca = Alimento.new("carne de vaca",50,164.0,21.1,0.0,3.1,"hombre",100)
+  			@carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
   			@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
   			@lentejas = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
 
@@ -509,9 +509,12 @@ RSpec.describe HuellaNutricional do
   		end
 
   		context "Pruebas de los metodos de la clase hija "do
-  			it " Valor total de la emisiones diarias gei"do
+  			it " Debe existir metodo que devuelve valor total de la emisiones diarias gei"do
   				expect(@plato_tradicional_huella_ambiental.respond_to?("emisiones_gei")).to eq true
+  				expect(@plato_tradicional_huella_ambiental.emisiones_gei).to eq 54.6
   			end
+
+  			
   		end
   	end
 

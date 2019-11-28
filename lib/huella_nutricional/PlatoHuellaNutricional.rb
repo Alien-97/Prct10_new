@@ -10,7 +10,6 @@ class PlatoHuellaNutricional
 		lista_alimentos.each do |alimento|
 
 			if alimento.class == Alimento
-				puts 
 				@acc_cantidad_alimentos += alimento.cantidad_elemento
 			else
 				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"

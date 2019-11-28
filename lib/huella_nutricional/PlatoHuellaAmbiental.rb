@@ -3,6 +3,7 @@ require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prá
 require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/PlatoHuellaNutricional.rb'
 class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
+	include Comparable
 	
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
 		super(nombre,lista_alimentos,acc_cantidad_alimentos)
@@ -44,7 +45,7 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	alias parent_to_s to_s
 
-	
+
 	def to_s
 		s = ""
 		
@@ -53,6 +54,12 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
         s += "Emisiones de gases en kg CO2 " + emisiones_gei.to_s + "\n"
 
         s+= "Cantidad de terreno empleado en m2 " + area_terreno.to_s + "\n"
+	end
+
+	def <=> (other)
+		if other.is_a? PlatoHuellaNutricional
+    		emisiones_gei <=> other.emisiones_gei
+    	end
 	end
 
 

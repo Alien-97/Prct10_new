@@ -549,11 +549,11 @@ RSpec.describe HuellaNutricional do
   			
   			@plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos)
 
-  			@salmonito = Alimento.new("salmon",6.0,3.7,19.9,0.0,6.6,"hombre",100)
+  			@salmonito = Alimento.new("salmon",6.0,3.7,19.9,0.0,13.6,"hombre",100)
 
   			@nuecito = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
 
-  			@tofito = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+  			@tofito = Alimento.new("tofu",2.9,2.2,8.0,1.9,4.8,"hombre",100)
 
   			@camaronito = Alimento.new("camarones",18.0,2.0,17.6,1.5,0.6,"hombre",100)
 
@@ -648,24 +648,24 @@ RSpec.describe HuellaNutricional do
   		context " Pruebas del modulo Comparable "do
 
   			it " Debe existir el comparable < "do
-  				expect(@plato_tradicional_huella_ambiental < @plato_dieta_orientall).to eq true
+  				expect(@plato_tradicional_huella_ambiental > @plato_dieta_orientall).to eq true
   			end
 
   			it " Debe existir el comparable >"do
-  				expect(@plato_tradicional_huella_ambiental > @plato_dieta_orientall).to eq false
+  				expect(@plato_tradicional_huella_ambiental < @plato_dieta_orientall).to eq false
   			end
 
   			it " Debe existir  el comparable <= "do
-  				expect(@plato_tradicional_huella_ambiental <= @plato_dieta_orientall).to eq true
+  				expect(@plato_tradicional_huella_ambiental >= @plato_dieta_orientall).to eq true
   			end
 
   			it "Debe existir el comparable >="do
-  				expect(@plato_tradicional_huella_ambiental >= @plato_dieta_orientall).to eq false
+  				expect(@plato_tradicional_huella_ambiental <= @plato_dieta_orientall).to eq false
   			end
 
   			it "Debe existir el comparable between"do
 
-  				expect(@plato_dieta_orientall.between?(@plato_tradicional_huella_ambiental,@plato_dieta_orientall_fuerte)).to eq true
+  				expect(@plato_dieta_orientall_fuerte.between?(@plato_dieta_orientall,@plato_tradicional_huella_ambiental)).to eq true
   			end
   		end
   	end

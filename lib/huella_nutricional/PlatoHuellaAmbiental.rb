@@ -26,5 +26,21 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 		@emisiones_gei
 	end
 
-	
+
+	def area_terreno
+
+		if @area_terreno_m2 == 0
+
+			@lista_alimentos.each do |alimento|
+
+				@area_terreno_m2 += alimento.area_terreno
+			end
+
+			@area_terreno_m2 = @area_terreno_m2.round(2)
+		end
+
+		@area_terreno_m2
+	end
+
+
 end

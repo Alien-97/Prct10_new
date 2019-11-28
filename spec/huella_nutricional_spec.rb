@@ -96,7 +96,7 @@ RSpec.describe HuellaNutricional do
 
 		context "Probando el metodo to_s"do
 			it"Se debe poder obtener la salida formateada de las variables de instancia y toda la información almacenada del alimento"do
-				expect(@carne_vaca.to_s).to eq("100 g de carne de vaca los kg de gases de efecto invernadero que genera son: 50.0 y la cantidad de terreno en metros cuadrados usado en producirlo son: 164.0 Comer un kilo de carne de vaca te da 21.1 gramos de proteinas  y 0.0 gramos de carbohidratos  y 3.1 gramos de lipidos  Su valor energetico es: 112.3 ")
+				expect(@carne_vaca.to_s).to eq( @carne_vaca.cantidad_elemento.to_s + " " + "g" + " " + "de " + "#{@carne_vaca.nombre_alimento}" + " los kg de gases de efecto invernadero que genera son: 50.0 y la cantidad de terreno en metros cuadrados usado en producirlo son: 164.0 Comer un kilo de carne de vaca te da 21.1 gramos de proteinas  y 0.0 gramos de carbohidratos  y 3.1 gramos de lipidos  Su valor energetico es: 112.3 ")
 			end
 		end
 
@@ -390,8 +390,29 @@ RSpec.describe HuellaNutricional do
 
   			it " Debe existir el getter de la cantidad de alimentos "do
   				expect(@plato_tradicional.respond_to?("acc_cantidad_alimentos")).to eq true
+  				expect(@plato_tradicional.acc_cantidad_alimentos).to be >= 200
   			end
 
+  		end
+
+  		context "Comprobar que todos los alimentos los consume la misma persona "do
+  			
+  			it "Todos los alimentos del plato han de ser consumidos por la misma persona"do
+  				iterator = @lista_alimentos_plato.head
+  				
+
+  				puts iterator
+				while iterator!=nil
+					
+					if iterator != @lista_alimentos_plato.head
+						
+						expect(iterator.value.sexo).to eq iterator.prev.value.sexo
+						
+					end
+
+					iterator = iterator.next
+				end
+  			end
   		end
 
   		context " Deben existir los metodos que calculan el porcentaje de nutrientes en el plato"do
@@ -421,6 +442,57 @@ RSpec.describe HuellaNutricional do
   			end
   		end
 
+  		context " Prueba del metodo to_s" do
+
+  			it "Debe existir el metodo to_s y debe mostrar la salida formateada "do
+  				expect(@plato_tradicional.respond_to?("to_s")).to eq true
+  				expect(@plato_tradicional.to_s).to eq "nombre del plato " +  @plato_tradicional.nombre + " se compone de :" + "\n\n" +
+  														@plato_tradicional.lista_alimentos.to_s + "\n" + "peso total en gramos de los alimentos del plato " + 
+  														@plato_tradicional.acc_cantidad_alimentos.to_s + "\n"	+ "porcentaje de proteinas en el plato " + @plato_tradicional.porcentaje_proteinas.to_s + "\n" + "porcentaje de carbohidratos en el plato "+ @plato_tradicional.porcentaje_carbohidratos.to_s + "\n" + "porcentaje de lipidos en el plato " + @plato_tradicional.porcentaje_lipidos.to_s + "\n\n" 
+			end
+  		end
+
+
+  	end
+
+
+  	describe PlatoHuellaAmbiental do
+  		before :all do
+  			@carne_vaca = Alimento.new("carne de vaca",50,164.0,21.1,0.0,3.1,"hombre",100)
+  			@huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+  			@lentejas = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
+
+  			@nodo_carne_vaca = Nodo.new(@carne_vaca,nil,nil)
+  			@nodo_huevos = Nodo.new(@huevos,nil,nil)
+  			@nodo_lentejas = Nodo.new(@lentejas,nil,nil)
+
+  			@lista_alimentos_plato = Lista.new
+
+  			@lista_alimentos_plato.push_tail(@nodo_carne_vaca)
+  			@lista_alimentos_plato.push_tail(@nodo_huevos)
+  			@lista_alimentos_plato.push_tail(@nodo_lentejas)
+
+  			@acc_cantidad_alimentos = 0
+
+  			@emisiones_gei = 0
+  			@m2_terreno = 0
+  			@plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,acc_cantidad_alimentos,emisiones_gei,m2_terreno)
+  		end
+
+  		context "Pruebas clase,tipo y jerarquia de la clase PlatoHuellaNutricional"do
+
+  			it "Pruebas de tipo"do
+  				expect(@plato_tradicional_huella_ambiental.respond_to? PlatoHuellaAmbiental).to eq true
+  			end
+
+  			it "Pruebas de jerarquía del objeto"do
+  				expect(@plato_tradicional_huella_ambiental.is_a? PlatoHuellaNutricional).to eq true
+  			end
+
+  			it "Pruebas de jerarquía "do
+  				expect(@plato_tradicional_huella_ambiental.class).to eq PlatoHuellaAmbiental
+  			end
+  		end
 
   	end
 

@@ -645,7 +645,29 @@ RSpec.describe HuellaNutricional do
 
   		end
 
-  		
+  		context " Pruebas del modulo Comparable "do
+
+  			it " Debe existir el comparable < "do
+  				expect(@plato_tradicional_huella_ambiental < @plato_dieta_orientall).to eq true
+  			end
+
+  			it " Debe existir el comparable >"do
+  				expect(@plato_tradicional_huella_ambiental > @plato_dieta_orientall).to eq false
+  			end
+
+  			it " Debe existir  el comparable <= "do
+  				expect(@plato_tradicional_huella_ambiental <= @plato_dieta_orientall).to eq true
+  			end
+
+  			it "Debe existir el comparable >="do
+  				expect(@plato_tradicional_huella_ambiental >= @plato_dieta_orientall).to eq false
+  			end
+
+  			it "Debe existir el comparable between"do
+
+  				expect(@plato_dieta_orientall.between?(@plato_tradicional_huella_ambiental,@plato_dieta_orientall_fuerte)).to eq true
+  			end
+  		end
   	end
 
 

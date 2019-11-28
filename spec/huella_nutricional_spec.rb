@@ -498,6 +498,20 @@ RSpec.describe HuellaNutricional do
   			it " Debe existir el nombre del plato "do
   				expect(@plato_tradicional_huella_ambiental.instance_variable_defined?(:@nombre)).to eq true
   			end
+
+  			it " Debe existir la lista de alimentos "do
+  				expect(@plato_tradicional_huella_ambiental.instance_variable_defined?(:@lista_alimentos)).to eq true
+  			end
+
+  			it " Debe existir la cantidad total de alimentos en el plato "do
+  				expect(@plato_tradicional_huella_ambiental.instance_variable_defined?(:@acc_cantidad_alimentos)).to eq true
+  			end
+  		end
+
+  		context "Pruebas de los metodos de la clase hija "do
+  			it " Valor total de la emisiones diarias gei"do
+  				expect(@plato_tradicional_huella_ambiental.respond_to?("emisiones_gei")).to eq true
+  			end
   		end
   	end
 

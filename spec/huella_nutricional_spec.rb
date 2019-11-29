@@ -666,7 +666,7 @@ RSpec.describe HuellaNutricional do
 			end
 
 			it "Prueba de sort"do
-				expect(@lista_platos_diferentes_dietas.sort).to eq ([@nodo_dieta_locura.value,@nodo_dieta_española.value,@nodo_dieta_vasca.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vegetariana.value])
+				expect(@lista_platos_diferentes_dietas.sort).to eq ([@nodo_dieta_locura_por_carne.value,@nodo_dieta_española.value,@nodo_dieta_vasca.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vegetariana.value])
 			end
 
   		end

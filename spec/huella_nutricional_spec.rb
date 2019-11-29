@@ -394,6 +394,128 @@ RSpec.describe HuellaNutricional do
 
   			@plato_dieta_oriental_fuerte = PlatoHuellaNutricional.new("plato dieta oriental doble racion", @lista_dieta_oriental_fuerte,@acc_cantidad_alimentos3)
 
+  			@carne_vaca2 = Alimento.new("carne de vaca",50,164.0,21.1,0.0,3.1,"hombre",100)
+  			@carne_vaca3 = Alimento.new("carne de vaca",50,164.0,21.1,0.0,3.1,"hombre",100)
+  			@huevos2 = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+  			@lentejas2 = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
+  			@leche_de_vaca = Alimento.new("leche vaca",3.2,8.9,3.3,4.8,3.2,"hombre",100)
+
+  			@nodo_carne_vaca2 = Nodo.new(@carne_vaca2,nil,nil)
+  			@nodo_carne_vaca3 = Nodo.new(@carne_vaca2,nil,nil)
+  			@nodo_huevos_2 = Nodo.new(@huevos2 * 3,nil,nil)
+  			@nodo_lentejas_2 = Nodo.new(@lentejas2,nil,nil)
+  			@nodo_leche_vaca_2 = Nodo.new(@leche_de_vaca,nil,nil)
+
+  			@lista_dieta_espaniola = Lista.new
+
+  			@lista_dieta_espaniola.push_tail(@nodo_carne_vaca2)
+  			@lista_dieta_espaniola.push_tail(@nodo_huevos_2)
+  			@lista_dieta_espaniola.push_tail(@nodo_lentejas_2)
+  			@lista_dieta_espaniola.push_tail(@nodo_leche_vaca_2)
+
+  			acc_cantidad_alimentos_dieta_espaniola = 0
+
+  			@plato_dieta_espaniola = PlatoHuellaNutricional.new("plato dieta española",@lista_dieta_espaniola,acc_cantidad_alimentos_dieta_espaniola)
+
+
+  			@carne_cordero2 = Alimento.new("carne cordero",20.0,185.0,18.0,0.0,17.0, "hombre",100)
+  			@carne_cordero3 = Alimento.new("carne cordero",20.0,185.0,18.0,0.0,17.0, "hombre",100)
+  			@chocolate2 = Alimento.new("chocolate",2.3,3.4,5.3,47.0,30.0,"hombre",100)
+  			@queso = Alimento.new("queso",11.0,41.0,25.0,1.3,33.0,"hombre",100)
+  			@salmonillo = Alimento.new("salmon",6.0,3.7,19.9,0.0,6.6,"hombre",100)
+  			@nuecillo = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
+
+  			@tofillo = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+
+  			@camarones_de_dakhla = Alimento.new("camarones",18.0,2.0,17.6,1.5,0.6,"hombre",100)
+
+  			@camarones_de_dakhla2 = Alimento.new("camarones",18.0,2.0,17.6,1.5,0.6,"hombre",100)
+
+  			@nodo_carne_cordero = Nodo.new(@carne_cordero2 * 3,nil,nil)
+  			@nodo_carne_cordero2 = Nodo.new(@carne_cordero3 * 2.5,nil,nil)
+  			@nodo_chocolate = Nodo.new(@chocolate2 * 2,nil,nil)
+  			@nodo_queso = Nodo.new(@queso,nil,nil)
+  			@nodo_tofillo = Nodo.new(@tofillo * 2,nil,nil)
+  			@nodo_nuecillo = Nodo.new(@nuecillo * 2,nil,nil)
+  			@nodo_camarones_dakhla = Nodo.new(@camarones_de_dakhla,nil,nil)
+  			@nodo_camarones_dakhla2 = Nodo.new(@camarones_de_dakhla2,nil,nil)
+  			@lista_dieta_vasca = Lista.new
+
+  			@lista_dieta_vasca.push_tail(@nodo_carne_cordero)
+  			@lista_dieta_vasca.push_tail(@nodo_chocolate)
+
+  			acc_cantidad_alimentos_vasca = 0
+
+  			@plato_dieta_vasca = PlatoHuellaNutricional.new(" plato dieta vasca",@lista_dieta_vasca,acc_cantidad_alimentos_vasca)
+
+  			@lista_dieta_vegetaria = Lista.new
+
+  			@lista_dieta_vegetaria.push_tail(@nodo_tofillo)
+  			@lista_dieta_vegetaria.push_tail(@nodo_nuecillo)
+  			@lista_dieta_vegetaria.push_tail(@nodo_queso)
+
+  			@acc_cantidad_alimentos_vegetaria  = 0
+
+  			@plato_dieta_vegetaria = PlatoHuellaNutricional.new(" plato dieta vegetaria",@lista_dieta_vegetaria,@acc_cantidad_alimentos_vegetaria)
+
+  			@lista_dieta_locura_carne = Lista.new
+
+  			@lista_dieta_locura_carne.push_tail(@nodo_carne_vaca3)
+  			@lista_dieta_locura_carne.push_tail(@nodo_carne_cordero2)
+  			@lista_dieta_locura_carne.push_tail(@nodo_camarones_dakhla)
+  			@lista_dieta_locura_carne.push_tail(@nodo_camarones_dakhla2)
+
+  			@acc_cantidad_locura_por_carne = 0
+
+  			@plato_dieta_locura_por_carne = PlatoHuellaNutricional.new( "plato dieta locura por la carne",@lista_dieta_locura_carne,@acc_cantidad_locura_por_carne)
+
+  			@quesesillo = Alimento.new("queso",11.0,41.0,25.0,1.3,33.0,"hombre",100)
+  			@salmonillo = Alimento.new("salmon",6.0,3.7,19.9,0.0,6.6,"hombre",100)
+  			@nuececillo = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
+
+  			@tofefillo = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+
+  			@nodo_quesesillo = Nodo.new(@carne_cordero2 * 3,nil,nil)
+  			@nodo_salmooon = Nodo.new(@carne_cordero3,nil,nil)
+  			@nodo_nuecillo = Nodo.new(@chocolate2 * 5,nil,nil)
+  			@nodo_tofefillo = Nodo.new(@queso,nil,nil)
+
+  			@lista_dieta_vegetariana = Lista.new
+
+  			@lista_dieta_vegetariana.push_tail(@nodo_quesesillo)
+  			@lista_dieta_vegetariana.push_tail(@nodo_nuecillo)
+  			@lista_dieta_vegetariana.push_tail(@nodo_tofefillo)
+
+  			@acc_cantidad_alimentos_vegetariana = 0
+
+
+  			@plato_dieta_vegetariana = PlatoHuellaNutricional.new("plato dieta vegetariana",@lista_dieta_vegetariana,@acc_cantidad_alimentos_vegetariana)
+
+  			puts  "valor energetico dieta española " + @plato_dieta_espaniola.valor_calorico_total.to_s
+
+  			puts  "valor energetico dieta vegetariana " + @plato_dieta_vegetariana.valor_calorico_total.to_s
+
+  			puts "valor energetico dieta vegetaria " + @plato_dieta_vegetaria.valor_calorico_total.to_s
+
+  			puts "valor energetico dieta vasca " + @plato_dieta_vasca.valor_calorico_total.to_s
+
+  			puts "valor energetico dieta locura carne " + @plato_dieta_locura_por_carne.valor_calorico_total.to_s
+
+  			@lista_platos_diferentes_dietas = Lista.new
+
+  			@nodo_dieta_española = Nodo.new(@plato_dieta_espaniola,nil,nil)
+  			@nodo_dieta_vegetariana = Nodo.new(@plato_dieta_vegetariana,nil,nil)
+
+  			@nodo_dieta_vegetaria = Nodo.new(@plato_dieta_vegetaria,nil,nil)
+  			@nodo_dieta_vasca = Nodo.new(@plato_dieta_vasca,nil,nil)
+
+  			@nodo_dieta_locura_por_carne = Nodo.new(@plato_dieta_locura_por_carne,nil,nil)
+
+  			@lista_platos_diferentes_dietas.push_tail(@nodo_dieta_española)
+  			@lista_platos_diferentes_dietas.push_tail(@nodo_dieta_vegetariana)
+  			@lista_platos_diferentes_dietas.push_tail(@nodo_dieta_vegetaria)
+  			@lista_platos_diferentes_dietas.push_tail(@nodo_dieta_vasca)
+  			@lista_platos_diferentes_dietas.push_tail(@nodo_dieta_locura_por_carne)
   		end
 
   		
@@ -524,6 +646,30 @@ RSpec.describe HuellaNutricional do
   			end
   		end
 
+  		context " Prueba del modulo Enumerable para lista de platos segun valor energetico"do
+
+  			it "Prueba del collect"do
+
+				expect(@lista_platos_diferentes_dietas.collect { |i| i.valor_calorico_total}).to eq ([954.3,3473.2,1867.8,1633.4,838.4])
+			end
+
+			it "Prueba del select" do
+				expect(@lista_platos_diferentes_dietas.select { |i| i < @nodo_dieta_vegetariana.value}). to eq ([@nodo_dieta_española.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vasca.value,@nodo_dieta_locura_por_carne.value])
+			end
+
+			it "Prueba del max"do
+				expect(@lista_platos_diferentes_dietas.max). to eq @nodo_dieta_vegetariana.value
+			end
+
+			it "Prueba del min"do
+				expect(@lista_platos_diferentes_dietas.min). to eq @nodo_dieta_locura_por_carne.value
+			end
+
+			it "Prueba de sort"do
+				expect(@lista_platos_diferentes_dietas.sort).to eq ([@nodo_dieta_locura.value,@nodo_dieta_española.value,@nodo_dieta_vasca.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vegetariana.value])
+			end
+
+  		end
 
   	end
 
@@ -645,7 +791,7 @@ RSpec.describe HuellaNutricional do
 
   		end
 
-  		context " Pruebas del modulo Comparable "do
+  		context " Pruebas del modulo Comparable en la clase plato hija"do
 
   			it " Debe existir el comparable < "do
   				expect(@plato_tradicional_huella_ambiental > @plato_dieta_orientall).to eq true

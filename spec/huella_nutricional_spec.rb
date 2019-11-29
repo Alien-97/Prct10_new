@@ -943,23 +943,24 @@ RSpec.describe HuellaNutricional do
 
   			it "Prueba del collect"do
 
-				expect(@lista_platos_diferentes_dietass.collect { |i| i.valor_calorico_total}).to eq ([954.3,3473.2,1867.8,1633.4,838.4])
+				expect(@lista_platos_diferentes_dietass.collect { |i| i.emisiones_gei}).to eq ([66.2,82.5,15.6,64.6,136.0])
 			end
 
 			it "Prueba del select" do
-				expect(@lista_platos_diferentes_dietass.select { |i| i < @nodo_dieta_vegetariana.value}). to eq ([@nodo_dieta_española.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vasca.value,@nodo_dieta_locura_por_carne.value])
+				expect(@lista_platos_diferentes_dietass.select { |i| i < @nodo_dieta_vegetariana.value}). to eq ([@nodo_dieta_española.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vasca.value])
 			end
 
 			it "Prueba del max"do
-				expect(@lista_platos_diferentes_dietass.max). to eq @nodo_dieta_vegetariana.value
+				expect(@lista_platos_diferentes_dietass.max). to eq @nodo_dieta_locura_por_carne.value
 			end
 
 			it "Prueba del min"do
-				expect(@lista_platos_diferentes_dietass.min). to eq @nodo_dieta_locura_por_carne.value
+				expect(@lista_platos_diferentes_dietass.min). to eq @nodo_dieta_vegetaria.value
 			end
 
 			it "Prueba de sort"do
-				expect(@lista_platos_diferentes_dietass.sort).to eq ([@nodo_dieta_locura_por_carne.value,@nodo_dieta_española.value,@nodo_dieta_vasca.value,@nodo_dieta_vegetaria.value,@nodo_dieta_vegetariana.value])
+				puts @nodo_dieta
+				expect(@lista_platos_diferentes_dietass.sort).to eq ([@nodo_dieta_vegetaria.value,@nodo_dieta_vasca.value,@nodo_dieta_española.value,@nodo_dieta_vegetariana.value,@nodo_dieta_locura_por_carne.value])
 			end
 
   		end

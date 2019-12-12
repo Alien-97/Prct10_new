@@ -915,7 +915,7 @@ RSpec.describe HuellaNutricional do
   			end
 
   		end
-
+=begin
   		context " Pruebas del modulo Comparable en la clase plato hija"do
 
   			it " Debe existir el comparable < "do
@@ -965,6 +965,7 @@ RSpec.describe HuellaNutricional do
 			end
 
   		end
+=end
   	end
 
 end
@@ -1054,6 +1055,15 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 			expect(@plato_entrante.respond_to?("huella_nutricional_plato")).to eq true
 
 			expect(@plato_entrante.huella_nutricional_plato).to eq 6
+
+		end
+	end
+
+	describe "Calculando el plato con mayor huella nutricional "do
+
+		it "Se ha de poder obtener el plato con mayor huella nutricional "do
+
+			expect(@menu1.max).to eq @plato_entrante
 
 		end
 	end

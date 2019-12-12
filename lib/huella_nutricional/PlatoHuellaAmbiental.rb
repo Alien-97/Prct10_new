@@ -1,8 +1,4 @@
-=begin
-require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/alimento.rb'
-require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/lista.rb'
-require '/home/alien/Escritorio/INGENIERÍA_INFORMÁTICA/CUARTO/TERCERO/LPP/Prácticas/Prct8/tdd-Alien-97/lib/huella_nutricional/PlatoHuellaNutricional.rb'
-=end
+
 class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	include Comparable
@@ -60,7 +56,7 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	def <=> (other)
 		if other.is_a? PlatoHuellaNutricional
-    		emisiones_gei <=> other.emisiones_gei
+    		huella_nutricional_plato <=> other.huella_nutricional_plato
     	end
 	end
 
@@ -92,7 +88,7 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	end	
 
-	
+
 	def huella_nutricional_plato
 
 		hn_plato = ((indice_impacto_energia_plato + indice_impacto_huella_carbono_plato) / 2).round(2)

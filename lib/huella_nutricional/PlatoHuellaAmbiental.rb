@@ -84,15 +84,16 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 		ii_huella_carbono_plato = 0
 
-		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 <= 670}.inject(0) { |sum,element| sum  += 1 }
+		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 <= 800}.inject(0) { |sum,element| sum  += 1 }
 
-		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 670 && i.kg_gei*1000 <= 830}.inject(0) { |sum,element| sum += 2 }
+		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 800 && i.kg_gei*1000 <= 1200}.inject(0) { |sum,element| sum += 2 }
 
-		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 830}.inject(0) { |sum,element| sum += 3 }
+		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 1200}.inject(0) { |sum,element| sum += 3 }
 
 	end	
 
-
+	
+	
 
 end
 

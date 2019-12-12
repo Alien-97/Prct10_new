@@ -1036,7 +1036,7 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 		@menu1.push(@plato_entrante,@plato_primero,@plato_segundo)
 	end
 
-	describe "Calculando el indice de impacto de la energia y de la huella de carbono DEL PLATO"do
+	describe "Calculando el indice de impacto de la energia y de la huella de carbono, la huella nutricional DEL PLATO"do
 		it" debe existir el metodo que devuelve el indice de impacto de la energia del plato "do
 			expect(@plato_entrante.respond_to?("indice_impacto_energia_plato")).to eq true
 
@@ -1047,6 +1047,14 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 			expect(@plato_entrante.respond_to?("indice_impacto_huella_carbono_plato")).to eq true
 
 			expect(@plato_entrante.indice_impacto_huella_carbono_plato).to eq 9
+		end
+
+		it "debe existir el metodo que devuelve la huella nutricional "do
+
+			expect(@plato_entrante.respond_to?("huella_nutricional_plato")).to eq true
+
+			expect(@plato_entrante.huella_nutricional_plato).to eq 6
+
 		end
 	end
 end

@@ -64,7 +64,19 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
     	end
 	end
 
-	
+	def indice_impacto_energia_plato
+
+		range = [670,830]
+
+		ii_energia_plato = 0
+
+		ii_energia_plato += lista_alimentos.select{ |i| i.valor_energetico_alimento <= 670}.inject(0) { |sum,element| sum  += 1 }
+
+		ii_energia_plato += lista_alimentos.select{ |i| i.valor_energetico_alimento > 670 && i.valor_energetico_alimento <= 830}.inject(0) { |sum,element| sum += 2 }
+
+		ii_energia_plato += lista_alimentos.select{|i| i.valor_energetico_alimento > 830}.inject(0) { |sum,element| sum += 3 }
+
+	end
 
 end
 

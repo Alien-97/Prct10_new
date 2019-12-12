@@ -93,7 +93,11 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 	end	
 
 	
-	
+	def huella_nutricional_plato
+
+		hn_plato = ((indice_impacto_energia_plato + indice_impacto_huella_carbono_plato) / 2).round(2)
+
+	end
 
 end
 

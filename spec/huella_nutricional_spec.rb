@@ -1046,7 +1046,7 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 		it" debe existir el metodo que devuelve el indice de impacto de la huella de carbono del plato "do
 			expect(@plato_entrante.respond_to?("indice_impacto_huella_carbono_plato")).to eq true
 
-			expect(@plato_entrante.indice_impacto_huella_carbono_plato).to eq 3
+			expect(@plato_entrante.indice_impacto_huella_carbono_plato).to eq 9
 		end
 	end
 end

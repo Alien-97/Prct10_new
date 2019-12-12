@@ -78,6 +78,22 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	end
 
+	def indice_impacto_huella_carbono_plato
+
+		range = [670,830]
+
+		ii_huella_carbono_plato = 0
+
+		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 <= 670}.inject(0) { |sum,element| sum  += 1 }
+
+		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 670 && i.kg_gei*1000 <= 830}.inject(0) { |sum,element| sum += 2 }
+
+		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 830}.inject(0) { |sum,element| sum += 3 }
+
+	end	
+
+
+
 end
 
 @carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)

@@ -64,6 +64,7 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
     	end
 	end
 
+	
 
 end
 

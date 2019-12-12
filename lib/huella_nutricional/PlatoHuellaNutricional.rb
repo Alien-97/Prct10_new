@@ -115,6 +115,8 @@ class PlatoHuellaNutricional
     		valor_calorico_total <=> other.valor_calorico_total
     	end
     end
+
+    
 end
 
 =begin

@@ -865,6 +865,7 @@ RSpec.describe HuellaNutricional do
   			@lista_platos_diferentes_dietass.push_tail(@nodo_dieta_vasca)
   			@lista_platos_diferentes_dietass.push_tail(@nodo_dieta_locura_por_carne)
 
+
   		end
 
   		context "Pruebas clase,tipo y jerarquia de la clase PlatoHuellaAmbiental"do
@@ -966,5 +967,80 @@ RSpec.describe HuellaNutricional do
   		end
   	end
 
+end
 
+RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
+
+	before	:all do
+
+		@menu1 = []
+
+		@lista_plato_entrante = Lista.new
+
+		
+
+		@alimento1 = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
+		@alimento2 = Alimento.new("pollo",5.7,7.1,20.6,0.0,5.6,"hombre",100)
+		@alimento3 = Alimento.new("chocolate",2.3,3.4,5.3,47.0,30.0,"hombre", 100)
+
+		@nodo1 = Nodo.new(@alimento1,nil,nil)
+		@nodo2 = Nodo.new(@alimento2,nil,nil)
+		@nodo3 = Nodo.new(@alimento3,nil,nil)
+
+		@lista_plato_entrante.push_tail(@nodo1)
+		@lista_plato_entrante.push_tail(@nodo2)
+		@lista_plato_entrante.push_tail(@nodo3)
+
+		@acc_cantidad_alimentos1 = 0
+
+		@plato_entrante = PlatoHuellaAmbiental.new("plato entrante",@lista_plato_entrante,@acc_cantidad_alimentos1)
+
+
+		@lista_plato_primero = Lista.new
+
+		@alimento4 = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
+		@alimento5 = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
+		@alimento6 = Alimento.new("camarones(piscifactoria)",18.0,2.0,17.6,1.5,0.6,"hombre",100)
+
+		@nodo4 = Nodo.new(@alimento4,nil,nil)
+		@nodo5 = Nodo.new(@alimento5,nil,nil)
+		@nodo6 = Nodo.new(@alimento6,nil,nil)
+
+		@lista_plato_primero.push_tail(@nodo4)
+		@lista_plato_primero.push_tail(@nodo5)
+		@lista_plato_primero.push_tail(@nodo6)
+
+		@acc_cantidad_alimentos2 = 0
+
+		@plato_primero = PlatoHuellaAmbiental.new("plato primero",@lista_plato_primero,@acc_cantidad_alimentos2)
+
+
+		@lista_plato_segundo = Lista.new
+
+		@alimento6 = Alimento.new("carne de cordero",20.0,185.0,18.0,0.0,17.0,"hombre",100)
+		@alimento7 = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+		@alimento8 = Alimento.new("salmon(piscifactoria)",6.0,3.7,19.9,0.0,13.6,"hombre",100)
+
+		@nodo6 = Nodo.new(@alimento6,nil,nil)
+		@nodo7 = Nodo.new(@alimento7,nil,nil)
+		@nodo8 = Nodo.new(@alimento8,nil,nil)
+
+		@lista_plato_segundo.push_tail(@nodo6)
+		@lista_plato_segundo.push_tail(@nodo7)
+		@lista_plato_segundo.push_tail(@nodo8)
+
+		@acc_cantidad_alimentos3 = 0
+
+		@plato_segundo = PlatoHuellaAmbiental.new("plato segundo",@lista_plato_segundo,@acc_cantidad_alimentos3)
+
+		@menu1.push(@plato_entrante,@plato_primero,@plato_segundo)
+	end
+
+	describe "Calculando el indice de impacto de la energia y de la huella de carbono DEL PLATO"do
+		it" debe existir el metodo que devuelve el indice de impacto de la energia del plato "do
+			expect(@plato_entrante.respond_to?("indice_impacto_energia")).to eq true
+
+			expect(@plato_entrante.indice_impacto_energia).to eq 3
+		end
+	end
 end

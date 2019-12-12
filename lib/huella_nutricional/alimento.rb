@@ -1,3 +1,26 @@
+
+# Clase Alimento que almacena información nutricional y de
+# eficiencia  energética de un alimento.
+#
+# @author Alien Embarec Riadi
+#
+# @!attribute [rw] nombre_alimento
+#   @return [String] nombre del alimento
+# @!attribute [rw] kg_gei
+#   @return [Float] kilogramos gases efecto invernadero
+# @!attribute [rw] area_terreno
+#   @return [Float] m² de terreno usados para elaborar el producto
+# @!attribute [rw] proteinas
+#   @return [Float] cantidad en gramos de proteinas
+# @!attribute [rw] carbohidratos
+#   @return [Float] cantidad en gramos de carbohidratos
+# @!attribute [rw] lipidos
+#   @return [Float] cantidad en gramos de lipidos
+# @!attribute [rw] sexo
+#   @return [String] sexo de la persona, hombre o mujer
+# @!attribute [rw] cantidad_elemento
+#   @return [Float] cantidad en gramos de gramos del alimento
+
 class Alimento
 
 	include Comparable

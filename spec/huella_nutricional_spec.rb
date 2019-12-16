@@ -1044,20 +1044,20 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 		it" debe existir el metodo que devuelve el indice de impacto de la energia del plato "do
 			expect(@plato_entrante.respond_to?("indice_impacto_energia_plato")).to eq true
 
-			expect(@plato_entrante.indice_impacto_energia_plato).to eq 3
+			expect(@plato_entrante.indice_impacto_energia_plato).to eq 1
 		end
 
 		it" debe existir el metodo que devuelve el indice de impacto de la huella de carbono del plato "do
 			expect(@plato_entrante.respond_to?("indice_impacto_huella_carbono_plato")).to eq true
 
-			expect(@plato_entrante.indice_impacto_huella_carbono_plato).to eq 9
+			expect(@plato_entrante.indice_impacto_huella_carbono_plato).to eq 3
 		end
 
 		it "debe existir el metodo que devuelve la huella nutricional "do
 
 			expect(@plato_entrante.respond_to?("huella_nutricional_plato")).to eq true
 
-			expect(@plato_entrante.huella_nutricional_plato).to eq 6
+			expect(@plato_entrante.huella_nutricional_plato).to eq 2
 
 		end
 	end
@@ -1072,7 +1072,7 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 
 		it "Se ha de poder calcular los precios de los platos en base al plato con maxima huella nutricional"do
 
-			expect(@precios_menu1.collect{ |i| i.huella_nutricional_plato < @menu1.max.huella_nutricional_plato}.inject(:*) { |mul,element| element * 1.10})
+			expect(@precios_menu1.collect{ |i| i * @menu1.max.huella_nutricional_plato}).to eq ([3.70,5.80,6.30])
 		end
 	end
 

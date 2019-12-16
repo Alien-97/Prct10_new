@@ -164,7 +164,7 @@ class Lista
 	end
 
 	def size
-		return @sz_
+		return @sz
 	end
 
 	# Elimina un elemento en una posición concreta de la lista.

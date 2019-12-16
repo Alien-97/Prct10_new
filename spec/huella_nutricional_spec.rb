@@ -1072,7 +1072,7 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 
 		it "Se ha de poder calcular los precios de los platos en base al plato con maxima huella nutricional"do
 
-			expect(@precios_menu1.collect{ |i| i * @menu1.max.huella_nutricional_plato}).to eq ([3.70,5.80,6.30])
+			expect(@precios_menu1.collect{ |i| i * @menu1.max.huella_nutricional_plato}).to eq ([7.40,11.6,12.6])
 		end
 	end
 

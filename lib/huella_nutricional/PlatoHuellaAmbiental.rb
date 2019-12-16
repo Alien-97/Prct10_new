@@ -1,4 +1,5 @@
 
+
 class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	include Comparable
@@ -72,6 +73,8 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 		ii_energia_plato += lista_alimentos.select{|i| i.valor_energetico_alimento > 830}.inject(0) { |sum,element| sum += 3 }
 
+		ii_energia_plato = (ii_energia_plato / lista_alimentos.size).round
+
 	end
 
 	def indice_impacto_huella_carbono_plato
@@ -86,12 +89,14 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 1200}.inject(0) { |sum,element| sum += 3 }
 
+		ii_huella_carbono_plato = (ii_huella_carbono_plato / lista_alimentos.size).round
+
 	end	
 
 
 	def huella_nutricional_plato
 
-		hn_plato = ((indice_impacto_energia_plato + indice_impacto_huella_carbono_plato) / 2).round(2)
+		hn_plato = ((indice_impacto_energia_plato + indice_impacto_huella_carbono_plato) / 2).round
 
 	end
 

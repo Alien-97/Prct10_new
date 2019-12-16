@@ -27,17 +27,27 @@ class Alimento
 	
 	attr_accessor :nombre_alimento,:kg_gei,:area_terreno,:proteinas,:carbohidratos,:lipidos,:sexo,:cantidad_elemento
 
+	# Crear un alimento
+	#
+	# @return [Alimento]
+
 	def initialize(nombre_alimento,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo,cantidad_elemento)
 
 		@nombre_alimento,@kg_gei,@area_terreno,@proteinas,@carbohidratos,@lipidos,@sexo,@cantidad_elemento= nombre_alimento,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo,cantidad_elemento			
 	end
 
-
+	# Devuelve el valor energetico del alimento
+	
+	# @return val_energetico_alimento [Float] el valor energetico del alimento en Kcal
 	def valor_energetico_alimento
 		@val_energetico_alimento = (((4 * @carbohidratos + 4 * @proteinas + 9 * @lipidos) * 100).round) / 100.0
 
 		@val_energetico_alimento
 	end
+
+	# Multiplicar el alimento por un escalar
+	#
+	# @return [Alimento]
 
 	def *(escalar)
 
@@ -48,8 +58,10 @@ class Alimento
 		end
 	end
 
-	
-
+	# @deprecated Use {#to_s} instead of this method because
+	#	ya no es necesario
+	# 
+	# @return usted_consume_bien [String,Float] la cantidad de proteinas que se debe consumir en base a si es hombre o mujer.
 	def consumo_adecuado_proteinas
 
 		cantidad_recomendada_proteinas_hombre = 54.0
@@ -70,11 +82,18 @@ class Alimento
 
 	end
 
-
+	# Método que imprime la salida(datos) del alimento formateada
+	#
+	# @return salida [String] los datos del alimento formateados
 
 	def to_s
 		salida = "#{ @cantidad_elemento.to_s + " "+"g" + " " +"de" + " " + @nombre_alimento + " los kg de gases de efecto invernadero que genera son: " + @kg_gei.to_s + " y la cantidad de terreno en metros cuadrados usado en producirlo son: " + @area_terreno.to_s + " Comer un kilo de " + @nombre_alimento + " te da " + @proteinas.to_s + " gramos de proteinas " + " y " + @carbohidratos.to_s + " gramos de carbohidratos " + " y " + @lipidos.to_s + " gramos de lipidos " + " Su valor energetico es: " + valor_energetico_alimento.to_s} "
 	end
+
+
+	# @deprecated Use{to_s} 
+	#
+	# @return salida [String] consumo adecuado proteinas
 
 	def imprime_mensaje_recomendacion
 		consumo_adecuado_proteinas.to_s
@@ -86,9 +105,18 @@ class Alimento
 		end
 	end
 
+	# Sobrecarga del metodo <=> para comparar dos alimentos segun el valor energetico
+	#
+	# @param other [Alimento] alimento con el que se va a comparar
+	# @return valor_energetico_alimento [true,false] el resultado de la comparacion
+
 	def <=> (other)
 		valor_energetico_alimento <=> other.valor_energetico_alimento
 	end
+
+	# Impacto ambiental del alimento
+	# @param alimentos [Array] vector de alimentos para calcular el valor energetico
+	# @return acc_gei [Float] kg de gases de efecto invernadero solo cuando el hombre o mujer consume la cantidad de calorías recomendada
 
 	def impacto_ambiental(alimentos)
 		acc = 0

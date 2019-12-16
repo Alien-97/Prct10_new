@@ -1,14 +1,33 @@
+# Contenedor que sigue la filosofía de lista doblemente enlazada.
+# 
+# @author Alien Embarec Riadi
+#
+# @!attribute [r] head
+#   @return [Node] primer elemento de la lista
+# @!attribute [r] tail
+#   @return [Node] ultimo elemento de la lista
+# @!attribute [r] size
+#   @return [Fixnum] cantidad de elementos en la lista
 
 Nodo = Struct.new(:value,:next,:prev)
 
 class Lista
+
 	include Enumerable
 	attr_reader :head, :tail,:sz
+
+	# Crea una lista vacía.
+	#
+	# @return [List]
 	def initialize()
 		@head = nil
 		@tail = nil
 		@sz = 0
 	end
+
+	# Inserta un valor al principio de la lista.
+	#
+	# @param value valor o nodo que se introduce en la lista.
 	
 	def push_head(value)
 
@@ -30,6 +49,9 @@ class Lista
       
     end
 
+    # Inserta un valor al final de la lista.
+	#
+	# @param value valor o nodo que se introduce en la lista.
 
     def push_tail(value)
      if value.class == Nodo
@@ -48,6 +70,11 @@ class Lista
 
       return nil
     end
+
+    # Inserta un elemento en una posición concreta de la lista.
+	#
+	# @param posicion [Fixnum] posición en la que se quiere insertar el elemento.
+	# @param value valor o nodo que se quiere incluir.
 
     def insert(value,posicion)
     	if posicion.is_a? Integer
@@ -74,6 +101,9 @@ class Lista
 		end
     end
 
+   	# Elimina un elemento al principio de la lista.
+	#
+	# @return val [Nodo]
     def pop_head
 
 		if(@head == nil)
@@ -93,6 +123,9 @@ class Lista
 		return val
     end
 
+	# Elimina un elemento del final de la lista.
+	#
+	# @return val [Nodo]
     def pop_tail
     	if(@tail == nil)
         	return nil
@@ -111,12 +144,17 @@ class Lista
         return val
     end
 
+    # Muestra la salida formateada de los elementos de la lista
+	#
+	# @return s [String] la salida formateada de la lista
+
     def to_s
     	s = ""
         each {|i| s += "#{i.nombre_alimento.to_s}\n"}
         s
     end
 
+    #Metodo para enumerar la lista, poder aplicarle metodos de ordenacion, como collect,sort... todos del modulo enumerable
     def each
 		iterator = @head
 		while iterator != nil do
@@ -124,6 +162,14 @@ class Lista
 			iterator = iterator.next
 		end
 	end
+
+	def size
+		return @sz_
+	end
+
+	# Elimina un elemento en una posición concreta de la lista.
+	#
+	# @param posicion [Fixnum] posición del elemento que se quiere eliminar.
 
     def delete(posicion)
 	    if posicion.is_a? Integer

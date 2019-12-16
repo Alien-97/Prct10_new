@@ -1,7 +1,7 @@
 RSpec.describe HuellaNutricional do
-  it "has a version number" do
-    expect(HuellaNutricional::VERSION).not_to be nil
-  end
+	it "has a version number" do
+		expect(HuellaNutricional::VERSION).not_to be nil
+	end
 
   	describe Alimento do
   		before :all do
@@ -1035,9 +1035,12 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 		@plato_segundo = PlatoHuellaAmbiental.new("plato segundo",@lista_plato_segundo,@acc_cantidad_alimentos3)
 
 		@menu1.push(@plato_entrante,@plato_primero,@plato_segundo)
+
+		@precios_menu1 = [3.70,5.80,6.30]
 	end
 
 	describe "Calculando el indice de impacto de la energia y de la huella de carbono, la huella nutricional DEL PLATO"do
+
 		it" debe existir el metodo que devuelve el indice de impacto de la energia del plato "do
 			expect(@plato_entrante.respond_to?("indice_impacto_energia_plato")).to eq true
 
@@ -1059,12 +1062,19 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 		end
 	end
 
-	describe "Calculando el plato con mayor huella nutricional "do
+	describe "Calculando  huella nutricional del plato y precios "do
 
 		it "Se ha de poder obtener el plato con mayor huella nutricional "do
 
 			expect(@menu1.max).to eq @plato_entrante
 
 		end
+
+		it "Se ha de poder calcular los precios de los platos en base al plato con maxima huella nutricional"do
+
+			expect(@precios_menu1.collect{ |i| i.huella_nutricional_plato < @menu1.max.huella_nutricional_plato}.inject(:*) { |mul,element| element * 1.10})
+		end
 	end
+
+	
 end

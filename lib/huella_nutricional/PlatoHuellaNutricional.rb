@@ -1,8 +1,22 @@
+#Clase Plato que almacena la informacion nutricional del plato
+#
+# @author Alien Embarec Riadi
+#
+# @!attribute [r] nombre
+#   @return [String] nombre del plato
+# @!attribute [r] lista_alimentos
+#   @return [Lista] lista de alimentos que se recibe como parametro
+# @!attribute [r] acc_cantidad_alimentos
+#   @return [Float] variable que contiene la cantidad total de gramos de alimentos en el plato
 
 class PlatoHuellaNutricional
 	include Comparable
 
 	attr_reader :nombre,:lista_alimentos,:acc_cantidad_alimentos
+
+	# Crear un plato (valor energetico)
+	#
+	# @return [PlatoHuellaNutricional]
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
 		@nombre,@lista_alimentos,@acc_cantidad_alimentos= nombre,lista_alimentos,acc_cantidad_alimentos
 
@@ -20,6 +34,9 @@ class PlatoHuellaNutricional
 
 	end
 
+	# Devuelve el porcentaje de proteinas en el plato
+	#
+	# @return pr_proteinas [Float] porcentaje de proteinas en el plato
 
 	def porcentaje_proteinas
 
@@ -36,6 +53,10 @@ class PlatoHuellaNutricional
 		pr_proteinas = ((acc_proteinas/acc_cantidad_alimentos) * 100).round(2)
 		pr_proteinas
 	end
+
+	# Devuelve el porcentaje de carbohidratos en el plato
+	#
+	# @return pr_carbohidratos [Float] porcentaje de carbohidratos en el plato
 
 	def porcentaje_carbohidratos
 
@@ -54,6 +75,10 @@ class PlatoHuellaNutricional
 
 	end
 
+	# Devuelve el porcentaje de lipidos en el plato
+	#
+	# @return lipidos [Float] porcentaje de lipidos en el plato
+
 	def porcentaje_lipidos
 
 		acc_lipidos = 0
@@ -71,6 +96,10 @@ class PlatoHuellaNutricional
 
 	end
 
+	# Devuelve el valor energetico total
+	#
+	# @return acc_vct [Float] valor energetico del plato
+
 	def valor_calorico_total
 		acc_vct = 0
 
@@ -85,6 +114,10 @@ class PlatoHuellaNutricional
 		acc_vct = acc_vct.round(2)
 		acc_vct
 	end
+
+	# Devuelve la salida formateada del plato
+	#
+	# @return s [String] salida formateada del plato
 
 	def to_s
         s = ""
@@ -106,6 +139,11 @@ class PlatoHuellaNutricional
         	s
         end
     end
+
+    # Sobrecarga del metodo <=> para comparar dos platos segun el valor energetico
+	#
+	# @param other [PlatoHuellaNutricional] plato con el que se va a comparar
+	# @return valor_calorico_total [true,false] el resultado de la comparacion
 
     def <=> (other)
     	if other.instance_of? PlatoHuellaNutricional

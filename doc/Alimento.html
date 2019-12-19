@@ -584,7 +584,99 @@
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>nombre_alimento</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>kg_gei</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>area_terreno</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>proteinas</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>carbohidratos</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>lipidos</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>sexo</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>cantidad_elemento</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
 
 </div><table class="source_code">
   <tr>
@@ -592,13 +684,13 @@
       <pre class="lines">
 
 
-34
-35
-36
-37</pre>
+41
+42
+43
+44</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
 
@@ -795,7 +887,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -807,7 +906,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -1122,7 +1228,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -1134,7 +1247,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -1449,7 +1569,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -1461,7 +1588,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -1776,7 +1910,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -1788,7 +1929,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -2103,7 +2251,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -2115,7 +2270,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -2430,7 +2592,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -2442,7 +2611,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -2757,7 +2933,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -2769,7 +2952,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -3084,7 +3274,14 @@
 156
 157
 158
-159</pre>
+159
+160
+161
+162
+163
+164
+165
+166</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 24</span>
@@ -3096,7 +3293,14 @@
 	<span class='id identifier rubyid_attr_accessor'>attr_accessor</span> <span class='symbol'>:nombre_alimento</span><span class='comma'>,</span><span class='symbol'>:kg_gei</span><span class='comma'>,</span><span class='symbol'>:area_terreno</span><span class='comma'>,</span><span class='symbol'>:proteinas</span><span class='comma'>,</span><span class='symbol'>:carbohidratos</span><span class='comma'>,</span><span class='symbol'>:lipidos</span><span class='comma'>,</span><span class='symbol'>:sexo</span><span class='comma'>,</span><span class='symbol'>:cantidad_elemento</span>
 
 	<span class='comment'># Crear un alimento
-</span>	<span class='comment'>#
+</span>	<span class='comment'># @param nombre_alimento [String]
+</span>	<span class='comment'># @param kg_gei [Float]
+</span>	<span class='comment'># @param area_terreno [Float]
+</span>	<span class='comment'># @param proteinas [Float]
+</span>	<span class='comment'># @param carbohidratos [Float]
+</span>	<span class='comment'># @param lipidos [Float]
+</span>	<span class='comment'># @param sexo [String]
+</span>	<span class='comment'># @param cantidad_elemento [Float]
 </span>	<span class='comment'># @return [Alimento]
 </span>
 	<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_nombre_alimento'>nombre_alimento</span><span class='comma'>,</span><span class='id identifier rubyid_kg_gei'>kg_gei</span><span class='comma'>,</span><span class='id identifier rubyid_area_terreno'>area_terreno</span><span class='comma'>,</span><span class='id identifier rubyid_proteinas'>proteinas</span><span class='comma'>,</span><span class='id identifier rubyid_carbohidratos'>carbohidratos</span><span class='comma'>,</span><span class='id identifier rubyid_lipidos'>lipidos</span><span class='comma'>,</span><span class='id identifier rubyid_sexo'>sexo</span><span class='comma'>,</span><span class='id identifier rubyid_cantidad_elemento'>cantidad_elemento</span><span class='rparen'>)</span>
@@ -3276,17 +3480,17 @@
       <pre class="lines">
 
 
-52
-53
-54
-55
-56
-57
-58
-59</pre>
+59
+60
+61
+62
+63
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='op'>*</span><span class='lparen'>(</span><span class='id identifier rubyid_escalar'>escalar</span><span class='rparen'>)</span>
 
@@ -3347,12 +3551,12 @@
       <pre class="lines">
 
 
-113
-114
-115</pre>
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 120</span>
 
 <span class='kw'>def</span> <span class='op'>&lt;=&gt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_valor_energetico_alimento'>valor_energetico_alimento</span> <span class='op'>&lt;=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_valor_energetico_alimento'>valor_energetico_alimento</span>
@@ -3391,13 +3595,6 @@
       <pre class="lines">
 
 
-65
-66
-67
-68
-69
-70
-71
 72
 73
 74
@@ -3409,10 +3606,17 @@
 80
 81
 82
-83</pre>
+83
+84
+85
+86
+87
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 72</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_consumo_adecuado_proteinas'>consumo_adecuado_proteinas</span>
 
@@ -3484,13 +3688,6 @@
       <pre class="lines">
 
 
-121
-122
-123
-124
-125
-126
-127
 128
 129
 130
@@ -3519,10 +3716,17 @@
 153
 154
 155
-156</pre>
+156
+157
+158
+159
+160
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 128</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_impacto_ambiental'>impacto_ambiental</span><span class='lparen'>(</span><span class='id identifier rubyid_alimentos'>alimentos</span><span class='rparen'>)</span>
 	<span class='id identifier rubyid_acc'>acc</span> <span class='op'>=</span> <span class='int'>0</span>
@@ -3592,18 +3796,18 @@
       <pre class="lines">
 
 
-98
-99
-100
-101
-102
-103
-104
 105
-106</pre>
+106
+107
+108
+109
+110
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_imprime_mensaje_recomendacion'>imprime_mensaje_recomendacion</span>
 	<span class='id identifier rubyid_consumo_adecuado_proteinas'>consumo_adecuado_proteinas</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
@@ -3645,12 +3849,12 @@
       <pre class="lines">
 
 
-89
-90
-91</pre>
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
 	<span class='id identifier rubyid_salida'>salida</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span> <span class='ivar'>@cantidad_elemento</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>de</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@nombre_alimento</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> los kg de gases de efecto invernadero que genera son: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@kg_gei</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> y la cantidad de terreno en metros cuadrados usado en producirlo son: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@area_terreno</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Comer un kilo de </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@nombre_alimento</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> te da </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@proteinas</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> gramos de proteinas </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> y </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@carbohidratos</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> gramos de carbohidratos </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> y </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='ivar'>@lipidos</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> gramos de lipidos </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> Su valor energetico es: </span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='id identifier rubyid_valor_energetico_alimento'>valor_energetico_alimento</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='embexpr_end'>}</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span>
@@ -3675,14 +3879,14 @@
       <pre class="lines">
 
 
-42
-43
-44
-45
-46</pre>
+49
+50
+51
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/huella_nutricional/alimento.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_valor_energetico_alimento'>valor_energetico_alimento</span>
 	<span class='ivar'>@val_energetico_alimento</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>4</span> <span class='op'>*</span> <span class='ivar'>@carbohidratos</span> <span class='op'>+</span> <span class='int'>4</span> <span class='op'>*</span> <span class='ivar'>@proteinas</span> <span class='op'>+</span> <span class='int'>9</span> <span class='op'>*</span> <span class='ivar'>@lipidos</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='int'>100</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_round'>round</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='float'>100.0</span>
@@ -3699,7 +3903,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Dec 17 10:29:12 2019 by
+  Generated on Thu Dec 19 22:53:13 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.20 (ruby-2.6.5).
 </div>

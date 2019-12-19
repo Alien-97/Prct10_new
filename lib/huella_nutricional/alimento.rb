@@ -28,7 +28,14 @@ class Alimento
 	attr_accessor :nombre_alimento,:kg_gei,:area_terreno,:proteinas,:carbohidratos,:lipidos,:sexo,:cantidad_elemento
 
 	# Crear un alimento
-	#
+	# @param nombre_alimento [String]
+	# @param kg_gei [Float]
+	# @param area_terreno [Float]
+	# @param proteinas [Float]
+	# @param carbohidratos [Float]
+	# @param lipidos [Float]
+	# @param sexo [String]
+	# @param cantidad_elemento [Float]
 	# @return [Alimento]
 
 	def initialize(nombre_alimento,kg_gei,area_terreno,proteinas,carbohidratos,lipidos,sexo,cantidad_elemento)

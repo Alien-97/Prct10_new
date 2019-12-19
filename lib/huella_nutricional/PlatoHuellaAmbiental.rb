@@ -12,7 +12,9 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 	
 
 	# Crear un plato (eficiencia energetica)
-	#
+	# @param nombre [String]
+	# @param lista_alimentos [Lista]
+	# @param acc_cantidad_alimentos [Float]
 	# @return [PlatoHuellaAmbiental]
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
 		super(nombre,lista_alimentos,acc_cantidad_alimentos)
@@ -60,7 +62,7 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
 
 	# (see #to_s)
 	#
-	# Llama al metodo to_s de la clase padre
+	# llama al metodo to_s de la clase padre
 	alias parent_to_s to_s
 
 	# Mostrar la salida de la clase formateada
@@ -88,53 +90,40 @@ class PlatoHuellaAmbiental < PlatoHuellaNutricional
     	end
 	end
 
-	# indice de impacto de la energia del plato
-	# 
-	# @return  @ii_energia_plato [Integer] el resultado de la comparación
-
-	def indice_impacto_energia_plato
-
-		range = [670,830]
-
-		ii_energia_plato = 0
-
-		ii_energia_plato += lista_alimentos.select{ |i| i.valor_energetico_alimento <= 670}.inject(0) { |sum,element| sum  += 1 }
-
-		ii_energia_plato += lista_alimentos.select{ |i| i.valor_energetico_alimento > 670 && i.valor_energetico_alimento <= 830}.inject(0) { |sum,element| sum += 2 }
-
-		ii_energia_plato += lista_alimentos.select{|i| i.valor_energetico_alimento > 830}.inject(0) { |sum,element| sum += 3 }
-
-		ii_energia_plato = (ii_energia_plato / lista_alimentos.size).round
-
-	end
-
-	# indice de impacto de la huella de carbono del plato
-	# 
-	# @return  @ii_huella_carbono_plato [Integer] el resultado de la comparación
-
-	def indice_impacto_huella_carbono_plato
-
-		range = [670,830]
-
-		ii_huella_carbono_plato = 0
-
-		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 <= 800}.inject(0) { |sum,element| sum  += 1 }
-
-		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 800 && i.kg_gei*1000 <= 1200}.inject(0) { |sum,element| sum += 2 }
-
-		ii_huella_carbono_plato += lista_alimentos.select{ |i| i.kg_gei*1000 > 1200}.inject(0) { |sum,element| sum += 3 }
-
-		ii_huella_carbono_plato = (ii_huella_carbono_plato / lista_alimentos.size).round
-
-	end	
-
 	# indice de impacto de la huella nutricional del plato
 	# 
 	# @return  @hn_plato [Integer] la huella nutricional del plato
 
 	def huella_nutricional_plato
 
-		hn_plato = ((indice_impacto_energia_plato + indice_impacto_huella_carbono_plato) / 2).round
+		energia_plato = valor_calorico_total
+
+		ii_energia_plato = 0
+		range_energia = [670,830]
+
+		if energia_plato <= range_energia.first
+			ii_energia_plato = 1
+		elsif energia_plato > range_energia.first && energia_plato <= range_energia.last
+			ii_energia_plato = 2
+		elsif energia_plato > range_energia.last
+			ii_energia_plato = 3
+		end
+
+		gei_plato = emisiones_gei
+
+		ii_gei_plato = 0
+
+		range_gei = [800,1200]
+
+		if gei_plato <= range_gei.first
+			ii_gei_plato = 1
+		elsif gei_plato > range_gei.first && gei_plato <= range_gei.last
+			ii_gei_plato = 2
+		elsif gei_plato > range_gei.last
+			ii_gei_plato = 3
+		end
+			
+		hn_plato = ((ii_gei_plato + ii_energia_plato) / 2).round
 
 	end
 

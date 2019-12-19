@@ -15,7 +15,9 @@ class PlatoHuellaNutricional
 	attr_reader :nombre,:lista_alimentos,:acc_cantidad_alimentos
 
 	# Crear un plato (valor energetico)
-	#
+	# @param nombre [String]
+	# @param lista_alimentos [Lista]
+	# @param acc_cantidad_alimentos [Float]
 	# @return [PlatoHuellaNutricional]
 	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
 		@nombre,@lista_alimentos,@acc_cantidad_alimentos= nombre,lista_alimentos,acc_cantidad_alimentos

@@ -916,7 +916,7 @@ RSpec.describe HuellaNutricional do
 
   		end
 
-=begin
+
   		context " Pruebas del modulo Comparable en la clase plato hija"do
 
   			it " Debe existir el comparable < "do
@@ -968,9 +968,10 @@ RSpec.describe HuellaNutricional do
   		end
 
   	end
-
+=end
 end
 
+=begin
 RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 
 	before	:all do
@@ -1093,7 +1094,7 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 		@lista_alimentos_plato2 = [@lentejass,@carne_cordero_canario,@salmon_tabla]
 
 
-		@nombre_plato1 = "hamburguesa especial de la casa"
+		@nombre_plato1 = "Hamburguesa de la casa"
 
 		@nombre_plato2 = "lentejas con carne de cordero y salmon tabla"
 
@@ -1101,12 +1102,13 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 			descripcion  "Hamburguesa de la casa"
 
-			alimento1 :alimento => carne_vaca,
+			alimento :descripcion => "carne de vaca",
 				:gramos => 100
 
-			alimento2 :alimento => huevos,
+			alimento :descripcion => "huevos",
 				:gramos => 50
 		end
+
 
 	end
 
@@ -1114,7 +1116,7 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 		it "los gramos del plato se almacenan correctamente "do
 
-			expect(@plato_hamburguesa.respond_to?(acc_cantidad_alimentos)).to eq true
+			expect(@plato_hamburguesa.instance_variable_defined?(:@acc_cantidad_alimentos)).to eq true
 
 			expect(@plato_hamburguesa.acc_cantidad_alimentos).to eq 150
 		end
@@ -1124,3 +1126,5 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 	
 
 end
+
+

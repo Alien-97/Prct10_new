@@ -131,6 +131,7 @@ end
 
 #ejemplos para probar el correcto funcionamiento de la clase
 
+=begin
 @carne_vaca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
 @huevos = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
 @lentejas = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
@@ -151,3 +152,5 @@ end
 @plato_tradicional_huella_ambiental = PlatoHuellaAmbiental.new("plato tradicional",@lista_alimentos_plato,@acc_cantidad_alimentos)
 
 puts @plato_tradicional_huella_ambiental.to_s
+
+=end

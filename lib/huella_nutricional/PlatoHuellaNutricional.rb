@@ -25,6 +25,7 @@ class PlatoHuellaNutricional
 		@nombre,@alimentos= nombre,alimentos
 		@lista_alimentos = []
 		@acc_cantidad_alimentos  = 0
+		
 		if block_given?  
   			if block.arity == 1
    				yield self # que llames a la funcion que indica el bloque, si solo hay una funcion
@@ -40,13 +41,16 @@ class PlatoHuellaNutricional
 		@alimentos.each do |item| 
 			if alimento[:descripcion] == item.nombre_alimento
 					relacion_gramos = alimento[:gramos] / item.cantidad_elemento
-					acc_cantidad_alimentos +=  alimento[:gramos]
+					@acc_cantidad_alimentos +=  alimento[:gramos]
+
+					puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
 					@lista_alimentos << item * relacion_gramos
 			end
+			puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
 		end
 	end
 	
-	def nombre(nom)
+	def descripcion(nom)
 		@nombre = nom
 	end
 	# Devuelve el porcentaje de proteinas en el plato

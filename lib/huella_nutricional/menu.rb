@@ -50,14 +50,16 @@ class Menu
 
 	def valor_calorico_total
 
-		vct = platos.inject{|sum,plato| sum + plato.valor_calorico_total}
+		vct = lista_platos.inject(0.0){|sum,plato| sum + plato.valor_calorico_total}
 
 		vct
 	end
 
 	def valor_ambiental
 
-		va = platos.inject{|sum,plato| sum + plato.valor_ambiental}
+		va = (lista_platos.inject(0.0){|sum,plato| sum + plato.valor_ambiental})
+
+		puts "El valor calorico total del menu" + va
 
 		va
 	end

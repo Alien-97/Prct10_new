@@ -1158,7 +1158,12 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 			expect(@plato_hamburguesa.lista_alimentos).to eq [@carne_vacca * 1,@huevoss * 0.5]
 		end
 
+		it "El valor nutricional del menú es el correcto"do
 
+			expect(@menu_combinado.respond_to?("valor_calorico_total")).to eq true
+
+			expect(@menu_combinado.valor_calorico_total).to eq 800
+		end
 
 	end
 	

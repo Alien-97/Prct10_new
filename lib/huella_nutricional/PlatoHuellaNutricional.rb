@@ -43,10 +43,10 @@ class PlatoHuellaNutricional
 					relacion_gramos = alimento[:gramos] / item.cantidad_elemento
 					@acc_cantidad_alimentos +=  alimento[:gramos]
 
-					puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
+					#puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
 					@lista_alimentos << item * relacion_gramos
 			end
-			puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
+			#puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
 		end
 	end
 	

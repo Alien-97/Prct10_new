@@ -1121,6 +1121,11 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 			expect(@plato_hamburguesa.acc_cantidad_alimentos).to eq 150
 		end
 
+		it "La lista de platos se pasa correctamente"do
+			expect(@plato_hamburguesa.instance_variable_defined?(:@lista_alimentos_plato1)).to eq true
+
+			expect(@plato_hamburguesa.lista_alimentos_plato1).to eq [@carne_vacca,@huevoss].to eq true
+		end
 
 	end
 	

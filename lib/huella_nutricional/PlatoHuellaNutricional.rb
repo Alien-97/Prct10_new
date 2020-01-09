@@ -23,6 +23,8 @@ class PlatoHuellaNutricional
 	# @return [PlatoHuellaNutricional]
 	def initialize(nombre,alimentos,&block)
 		@nombre,@alimentos= nombre,alimentos
+
+		
 		@lista_alimentos = []
 		@acc_cantidad_alimentos  = 0
 		
@@ -39,8 +41,9 @@ class PlatoHuellaNutricional
 	def alimento(alimento)
 		
 		@alimentos.each do |item| 
+
 			if alimento[:descripcion] == item.nombre_alimento
-					relacion_gramos = alimento[:gramos] / item.cantidad_elemento
+					relacion_gramos = alimento[:gramos].to_f / item.cantidad_elemento
 					@acc_cantidad_alimentos +=  alimento[:gramos]
 
 					#puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
@@ -48,6 +51,8 @@ class PlatoHuellaNutricional
 			end
 			#puts " EL ACC DE CANTIDAD ELEMENTOS " + @acc_cantidad_alimentos.to_s
 		end
+
+		
 	end
 	
 	def descripcion(nom)

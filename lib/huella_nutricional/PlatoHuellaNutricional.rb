@@ -1,3 +1,5 @@
+
+
 #Clase Plato que almacena la informacion nutricional del plato
 #
 # @author Alien Embarec Riadi
@@ -12,30 +14,41 @@
 class PlatoHuellaNutricional
 	include Comparable
 
-	attr_reader :nombre,:lista_alimentos,:acc_cantidad_alimentos
+	attr_reader :nombre,:lista_alimentos,:acc_cantidad_alimentos,:alimentos
 
 	# Crear un plato (valor energetico)
 	# @param nombre [String]
 	# @param lista_alimentos [Lista]
 	# @param acc_cantidad_alimentos [Float]
 	# @return [PlatoHuellaNutricional]
-	def initialize(nombre,lista_alimentos,acc_cantidad_alimentos)
-		@nombre,@lista_alimentos,@acc_cantidad_alimentos= nombre,lista_alimentos,acc_cantidad_alimentos
-
-		i = 0
-		lista_alimentos.each do |alimento|
-
-			if alimento.class == Alimento
-				@acc_cantidad_alimentos += alimento.cantidad_elemento
-			else
-				raise TypeError, "Uno de los alimentos de la lista no es de tipo alimento"
-			end
-
-			i+=1
-		end
+	def initialize(nombre,alimentos,&block)
+		@nombre,@alimentos= nombre,alimentos
+		@lista_alimentos = []
+		@acc_cantidad_alimentos  = 0
+		if block_given?  
+  			if block.arity == 1
+   				yield self # que llames a la funcion que indica el bloque, si solo hay una funcion
+  			else
+   				instance_eval(&block) # haces yield self varias veces 
+  			end
+    	end
 
 	end
 
+	def alimento(alimento)
+		
+		@alimentos.each do |item| 
+			if alimento[:descripcion] == item.nombre_alimento
+					relacion_gramos = alimento[:gramos] / item.cantidad_elemento
+					acc_cantidad_alimentos +=  alimento[:gramos]
+					@lista_alimentos << item * relacion_gramos
+			end
+		end
+	end
+	
+	def nombre(nom)
+		@nombre = nom
+	end
 	# Devuelve el porcentaje de proteinas en el plato
 	#
 	# @return pr_proteinas [Float] porcentaje de proteinas en el plato

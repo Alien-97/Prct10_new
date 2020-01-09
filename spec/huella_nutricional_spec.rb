@@ -327,7 +327,7 @@ RSpec.describe HuellaNutricional do
 			end
 		end
   	end
-
+=begin
   	describe PlatoHuellaNutricional do
 
   		before :all do
@@ -915,6 +915,7 @@ RSpec.describe HuellaNutricional do
   			end
 
   		end
+
 =begin
   		context " Pruebas del modulo Comparable en la clase plato hija"do
 
@@ -965,7 +966,7 @@ RSpec.describe HuellaNutricional do
 			end
 
   		end
-=end
+
   	end
 
 end
@@ -1065,4 +1066,61 @@ RSpec.describe "Pruebas programación funcional gema Huella Nutricional"do
 	end
 
 	
+end
+
+=end
+
+
+RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
+
+	before :all do
+
+		@carne_vacca = Alimento.new("carne de vaca",50.0,164.0,21.1,0.0,3.1,"hombre",100)
+		@huevoss = Alimento.new("huevos",4.2,5.7,13.0,1.1,11.0,"hombre",100)
+		@lentejass = Alimento.new("lentejas",0.4,3.4,23.5,52.0,1.4,"hombre",100)
+		@carne_cordero_canario = Alimento.new("carne cordero",20.0,185.0,18.0,0.0,17.0, "hombre",100)
+
+		@pollo_especial = Alimento.new("pollo",5.7,7.1,20.6,0.0,5.6,"hombre",100)
+		@chocolate_finisimo = Alimento.new("chocolate",2.3,3.4,5.3,47.0,30.0,"hombre", 100)
+
+		@queso_tabla = Alimento.new("queso",11.0,41.0,25.0,1.3,33.0,"hombre",100)
+		@salmon_tabla = Alimento.new("salmon",6.0,3.7,19.9,0.0,6.6,"hombre",100)
+		@nuez_tabla = Alimento.new("nuez",0.3,7.9,20.0,21.0,54.0,"hombre",100)
+		@tofu_tabla = Alimento.new("tofu",2.0,2.2,8.0,1.9,4.8,"hombre",100)
+
+		@lista_alimentos_plato1 = [@carne_vacca,@huevoss]
+
+		@lista_alimentos_plato2 = [@lentejass,@carne_cordero_canario,@salmon_tabla]
+
+
+		@nombre_plato1 = "hamburguesa especial de la casa"
+
+		@nombre_plato2 = "lentejas con carne de cordero y salmon tabla"
+
+		@plato_hamburguesa = PlatoHuellaNutricional.new(@nombre_plato1,@lista_alimentos_plato1) do
+
+			descripcion  "Hamburguesa de la casa"
+
+			alimento1 :alimento => carne_vaca,
+				:gramos => 100
+
+			alimento2 :alimento => huevos,
+				:gramos => 50
+		end
+
+	end
+
+	context " Probando el dsl de plato " do
+
+		it "los gramos del plato se almacenan correctamente "do
+
+			expect(@plato_hamburguesa.respond_to?(acc_cantidad_alimentos)).to eq true
+
+			expect(@plato_hamburguesa.acc_cantidad_alimentos).to eq 150
+		end
+
+
+	end
+	
+
 end

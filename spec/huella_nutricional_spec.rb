@@ -1169,7 +1169,7 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 			expect(@menu_combinado.respond_to?("valor_ambiental")).to eq true
 
-			expect(@menu_combinado.valor_ambiental).to eq 180
+			expect(@menu_combinado.valor_ambiental).to eq 52.1
 		end
 
 	end

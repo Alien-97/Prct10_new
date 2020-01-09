@@ -1096,7 +1096,7 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 		@nombre_plato1 = "Hamburguesa de la casa"
 
-		@nombre_plato2 = "lentejas con carne de cordero y salmon tabla"
+		@nombre_plato2 = "lentejas con carne de cordero y salmon"
 
 		@plato_hamburguesa = PlatoHuellaNutricional.new(@nombre_plato1,@lista_alimentos_plato1) do
 
@@ -1109,6 +1109,37 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 				:gramos => 50
 		end
 
+
+		@plato_lentejas = PlatoHuellaNutricional.new(@nombre_plato2,@lista_alimentos_plato2) do
+
+			descripcion "Lentejas con carne de cordero y salmon"
+
+			alimento :descripcion => "lentejas",
+				:gramos => 100
+
+			alimento :descripcion => "carne de cordero",
+				:gramos  => 180
+
+			alimento :descripcion => "salmon tabla",
+				:gramos => 165
+
+		end
+
+		@nombre_menu1 = "Combinado nº1"
+
+		@lista_alimentos_menu1 = [@plato_hamburguesa, @plato_lentejas]
+
+		@menu_combinado = Menu.new(@nombre_menu1,@lista_alimentos_menu1) do
+
+			descripcion "Hamburguesa de la casa acompañada de lentejas"
+
+			plato :descripcion => "Hamburguesa de la casa",
+				:precio => 4.25
+			plato :descripcion => "lentejas con carne de cordero y salmon",
+				:precio => 1.75
+
+			precio 6
+		end
 
 	end
 

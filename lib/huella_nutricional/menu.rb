@@ -10,7 +10,7 @@ class Menu
 	def initialize(nombre,platos,&block)
 		@nombre = nombre
 		@componente = []
-		@precio = precio
+		@precio = 0
 		@platos = platos
 		@lista_platos = []
 
@@ -25,17 +25,16 @@ class Menu
 	end
 
 	def plato(plato)
-		@platos.each |item| do
+		@platos.each do |item| 
 			if plato[:descripcion] == item.nombre
-					relacion_gramos = plato[:gramos] / item.acc_cantidad_alimentos
-
-					@lista_platos << item * relacion_gramos
+					
+					@lista_platos << item 
 			end
 		end
 	end
 
 	def descripcion (desc)
-		@descripcion = desc
+		@nombre = desc
 	end
 
 	def componente(comida)
@@ -47,9 +46,6 @@ class Menu
 
 	def precio (price)
 		@precio = price
-	end
-
-	def to_s
 	end
 
 	def valor_calorico_total
@@ -76,7 +72,7 @@ class Menu
 
 			s += "lista de platos del menú " + "\n\n";
 
-			@lista_platos.each |item| do
+			@lista_platos.each do |item| 
 
 				s += "\n"
 				s += item.to_s

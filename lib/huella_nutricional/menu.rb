@@ -77,6 +77,7 @@ class Menu
 			@lista_platos.each do |item| 
 
 				s += "\n"
+				
 				s += item.to_s
 
 				s += "\n"

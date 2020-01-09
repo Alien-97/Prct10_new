@@ -1127,9 +1127,9 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 		@nombre_menu1 = "Combinado nº1"
 
-		@lista_alimentos_menu1 = [@plato_hamburguesa, @plato_lentejas]
+		@lista_platos_menu1 = [@plato_hamburguesa, @plato_lentejas]
 
-		@menu_combinado = Menu.new(@nombre_menu1,@lista_alimentos_menu1) do
+		@menu_combinado = Menu.new(@nombre_menu1,@lista_platos_menu1) do
 
 			descripcion "Hamburguesa de la casa acompañada de lentejas"
 
@@ -1172,6 +1172,10 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 			expect(@menu_combinado.valor_ambiental).to eq 52.1
 		end
 
+		it " El método to_s de la clase menú " do
+
+			expect(@menu_combinado.to_s).to eq ("nombre del menú " + "Hamburguesa de la casa acompañada de lentejas "+ " Se compone de :" + "\n\n" + "lista de platos del menú " + "\n\n" + (@menu_combinado.lista_platos).each{|item| "\n" + item.to_s + "\n" }  )
+		end
 	end
 	
 

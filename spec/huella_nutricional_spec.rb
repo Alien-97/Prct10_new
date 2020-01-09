@@ -1162,7 +1162,7 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 			expect(@menu_combinado.respond_to?("valor_calorico_total")).to eq true
 
-			expect(@menu_combinado.valor_calorico_total).to eq 800
+			expect(@menu_combinado.valor_calorico_total).to eq 190
 		end
 
 	end

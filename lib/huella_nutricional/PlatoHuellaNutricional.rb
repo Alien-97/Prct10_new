@@ -27,6 +27,7 @@ class PlatoHuellaNutricional
 		
 		@lista_alimentos = []
 		@acc_cantidad_alimentos  = 0
+		@emisiones_gei = 0
 		
 		if block_given?  
   			if block.arity == 1
@@ -137,6 +138,22 @@ class PlatoHuellaNutricional
 
 		acc_vct = acc_vct.round(2)
 		acc_vct
+	end
+
+	def emisiones_gei
+
+		if @emisiones_gei == 0
+
+			@lista_alimentos.each do |alimento|
+
+				@emisiones_gei += alimento.kg_gei
+			end
+
+			@emisiones_gei = @emisiones_gei.round(2)
+		end
+
+
+		@emisiones_gei
 	end
 
 	# Devuelve la salida formateada del plato

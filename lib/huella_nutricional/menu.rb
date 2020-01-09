@@ -57,9 +57,9 @@ class Menu
 
 	def valor_ambiental
 
-		va = (lista_platos.inject(0.0){|sum,plato| sum + plato.valor_ambiental})
+		va = (lista_platos.inject(0.0){|sum,plato| sum + plato.emisiones_gei})
 
-		puts "El valor calorico total del menu" + va
+		puts "El valor ambiental del menu " + va.to_s
 
 		va
 	end

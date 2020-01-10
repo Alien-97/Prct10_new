@@ -1174,7 +1174,7 @@ RSpec.describe "Pruebas programación funcional clase DSL plato y menú" do
 
 		it " El método to_s de la clase menú " do
 
-			expect(@menu_combinado.to_s).to eq ("nombre del menú " + "Hamburguesa de la casa acompañada de lentejas "+ " Se compone de :" + "\n\n" + "lista de platos del menú " + "\n\n" + (@menu_combinado.lista_platos).each{|item| "\n" + item.to_s + "\n" }  )
+			expect(@menu_combinado.to_s).to eq ("nombre del menú " + "Hamburguesa de la casa acompañada de lentejas "+ "Se compone de :" + "\n\n" + "lista de platos del menú " + "\n\n" + (@menu_combinado.lista_platos).inject(""){|sum,item| sum + "\n" + item.to_s + "\n" }  )
 		end
 	end
 	
